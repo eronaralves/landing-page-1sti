@@ -6,9 +6,11 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
+  
   body {
-    color: ${({theme}) => theme.white};
+    color: ${({ theme }) => theme.colors.gray400};
+    background-color: red;
+    -webkit-font-smoothing: 'antialiased';
   }
 
   body, input, textarea, button {
