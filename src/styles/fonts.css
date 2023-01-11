@@ -1,0 +1,63 @@
+/* Cabinet Grotesk */
+
+@font-face {
+  font-family: "CabinetGrotesk100";
+  src: url("../assets/fonts/CabinetGrotesk-Thin.otf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk200";
+  src: url("../assets/fonts/CabinetGrotesk-Extralight.otf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk300";
+  src: url("../assets/fonts/CabinetGrotesk-Light.otf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk400";
+  src: url("../assets/fonts/CabinetGrotesk-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk500";
+  src: url("../assets/fonts/CabinetGrotesk-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk700";
+  src: url("../assets/fonts/CabinetGrotesk-Bold.otf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk800";
+  src: url("../assets/fonts/CabinetGrotesk-Extrabold.otf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk900";
+  src: url("../assets/fonts/CabinetGrotesk-Black.otf");
+  font-weight: 900;
+}
+
+/* Gosha Sans */
+
+@font-face {
+  font-family: "GoshaSans400";
+  src: url("../assets/fonts/GoshaSans-Regular.otf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GoshaSansBold700";
+  src: url("../assets/fonts/GoshaSans-Bold.otf") format("truetype");
+  font-weight: 700;
+}
