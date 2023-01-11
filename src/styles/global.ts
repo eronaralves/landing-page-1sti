@@ -6,4 +6,12 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  body {
+    color: ${({theme}) => theme.white};
+  }
+
+  body, input, textarea, button {
+    font-size: 1rem;
+  }
 `
