@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+node_modules/*
 
 # JetBrains IDE files
 .idea/
@@ -14,6 +15,7 @@
 # next.js
 /.next/
 /out/
+.next/
 
 # production
 /build
