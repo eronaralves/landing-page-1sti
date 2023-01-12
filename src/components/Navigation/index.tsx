@@ -69,52 +69,50 @@ export function Navigation() {
 
   return (
     <S.Container>
-      <S.Navigation>
-        <S.Content>
-          <Link href="/">
-            <Image src={Logo} alt="Circulo preto escrito 1sti dentro" />
-          </Link>
+      <S.Content>
+        <Link href="/">
+          <Image src={Logo} alt="Circulo preto escrito 1sti dentro" />
+        </Link>
 
-          <S.MenuHamburguer>
-            {isOpenMenuMobile ? (
-              <VscChromeClose
-                onClick={handleToggleMenuMobile}
-                size={40}
-                color={theme.colors.green800}
-              />
-            ) : (
-              <VscMenu
-                onClick={handleToggleMenuMobile}
-                size={40}
-                color={theme.colors.green800}
-              />
-            )}
-          </S.MenuHamburguer>
+        <S.MenuHamburguer>
+          {isOpenMenuMobile ? (
+            <VscChromeClose
+              onClick={handleToggleMenuMobile}
+              size={40}
+              color={theme.colors.green800}
+            />
+          ) : (
+            <VscMenu
+              onClick={handleToggleMenuMobile}
+              size={40}
+              color={theme.colors.green800}
+            />
+          )}
+        </S.MenuHamburguer>
 
-          <S.Menu>
-            {menu.map((item) => (
-              <S.LinkMenu
-                key={item.label}
-                currentRoute={currentPath}
-                linkItem={item.link}
-              >
-                <Link href={item.link}>{item.label}</Link>
-              </S.LinkMenu>
-            ))}
+        <S.Menu>
+          {menu.map((item) => (
+            <S.LinkMenu
+              key={item.label}
+              currentRoute={currentPath}
+              linkItem={item.link}
+            >
+              <Link href={item.link}>{item.label}</Link>
+            </S.LinkMenu>
+          ))}
 
-            <S.Language currentLaguange={currentLanguage}>
-              <span onClick={handleToggleLanguage}>{currentLanguage}</span>
+          <S.Language currentLaguange={currentLanguage}>
+            <span onClick={handleToggleLanguage}>{currentLanguage}</span>
 
-              <S.FutureLaguage onClick={handleToggleLanguage}>
-                <span>∙</span>
-                {currentLanguage === CONSTS.LANGUAGES.PT
-                  ? CONSTS.LANGUAGES.EN
-                  : CONSTS.LANGUAGES.PT}
-              </S.FutureLaguage>
-            </S.Language>
-          </S.Menu>
-        </S.Content>
-      </S.Navigation>
+            <S.FutureLaguage onClick={handleToggleLanguage}>
+              <span>∙</span>
+              {currentLanguage === CONSTS.LANGUAGES.PT
+                ? CONSTS.LANGUAGES.EN
+                : CONSTS.LANGUAGES.PT}
+            </S.FutureLaguage>
+          </S.Language>
+        </S.Menu>
+      </S.Content>
       <MenuMobile
         isOpenMenuMobile={isOpenMenuMobile}
         menu={menu}

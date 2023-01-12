@@ -13,25 +13,15 @@ interface ILaguange {
 
 export const Container = styled.nav`
   position: relative;
-  background-color: ${({ theme }) => theme.colors.green800};
-`;
-
-export const Navigation = styled.nav`
   width: 100%;
   height: 74px;
 
-  padding-inline: 73px;
   opacity: 1;
 
-  background-color: gray;
-
-  @media (max-width: 820px) {
-    padding-inline: 50px;
-  }
-
-  @media (max-width: 750px) {
-    padding-inline: 30px;
-  }
+  z-index: 9;
+  background: rgb(207 207 207 / 67%);
+  backdrop-filter: blur(8.4px);
+  -webkit-backdrop-filter: blur(8.4px);
 `;
 
 export const Content = styled(Wrapper)`
@@ -58,10 +48,6 @@ export const MenuHamburguer = styled.div`
     display: block;
 
     position: absolute;
-    right: 32px;
-  }
-
-  @media (max-width: 630px) {
     right: 20px;
   }
 `;
