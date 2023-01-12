@@ -14,4 +14,22 @@ export const defaultTheme = {
 
     blue100: '#00C8DB',
   },
-}
+
+  fonts: {
+    cabinetGrotesk: {
+      thin: 'CabinetGrotesk100',
+      extraLight: 'CabinetGrotesk200',
+      light: 'CabinetGrotesk300',
+      regular: 'CabinetGrotesk400',
+      medium: 'CabinetGrotesk500',
+      bold: 'CabinetGrotesk700',
+      extrabold: 'CabinetGrotesk800',
+      black: 'CabinetGrotesk900',
+    },
+
+    goshaSans: {
+      regular: 'GoshaSans400',
+      bold: 'GoshaSansBold700',
+    },
+  },
+};
