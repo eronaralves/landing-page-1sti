@@ -33,6 +33,8 @@ export const Container = styled.div`
 `;
 
 export const MenuMobile = styled.ul`
+  height: 100vh;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;

@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
   
   body {
     color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.green800};
     -webkit-font-smoothing: 'antialiased';
   }
 
@@ -25,4 +26,5 @@ export const Wrapper = styled.div`
   width: 100%;
   max-width: 1227px;
   height: 100%;
+  margin: 0 auto;
 `;

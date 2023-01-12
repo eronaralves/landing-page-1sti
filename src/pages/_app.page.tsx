@@ -12,7 +12,7 @@ import { LanguageProvider } from '../context/app.context';
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   padding-top: 1.1875rem;
 

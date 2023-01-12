@@ -32,6 +32,10 @@ export const Navigation = styled.nav`
   @media (max-width: 750px) {
     padding-inline: 30px;
   }
+
+  @media (max-width: 630px) {
+    padding-inline: 20px;
+  }
 `;
 
 export const Content = styled(Wrapper)`
@@ -58,10 +62,6 @@ export const MenuHamburguer = styled.div`
     display: block;
 
     position: absolute;
-    right: 32px;
-  }
-
-  @media (max-width: 630px) {
     right: 20px;
   }
 `;
