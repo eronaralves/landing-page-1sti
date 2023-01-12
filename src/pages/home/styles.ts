@@ -12,7 +12,9 @@ export const Header = styled.header`
 
 export const VideoContainer = styled.div`
   width: 100%;
-  position: relative;
+  max-height: calc(90vh - 74px);
+  overflow: hidden;
+  position: absolute;
 
   &::after {
     content: '';
@@ -25,49 +27,25 @@ export const VideoContainer = styled.div`
     position: absolute;
     bottom: 0;
   }
+
+  @media (max-width: 630px) {
+    max-height: 100%;
+    position: relative;
+  }
 `;
 
 export const Video = styled.video`
   width: 100%;
-
-  /* background-color: ${({ theme }) => theme.colors.green800};
-  background: transparent
-    linear-gradient(270deg, #ffffff00 0%, #0b1617a8 66%, #0b1617 100%) 0% 0%
-    no-repeat padding-box;
-  mix-blend-mode: multiply;
-  opacity: 1; */
-`;
-
-export const ContainerAPresentation = styled.div`
-  width: 100%;
-  position: absolute;
-  inset: 94px 0 0 0;
-
-  padding-inline: 73px;
-
-  @media (max-width: 820px) {
-    padding-inline: 50px;
-  }
-
-  @media (max-width: 750px) {
-    padding-inline: 30px;
-  }
-
-  @media (max-width: 630px) {
-    padding-inline: 20px;
-    position: initial;
-  }
 `;
 
 export const ContentHero = styled(Wrapper)`
-  width: 100%;
-  /* height: 800px; */
-
-  z-index: 3;
+  height: calc(90vh - 74px);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  position: relative;
 
   h2 {
     font-family: ${({ theme }) => theme.fonts.goshaSans.bold};
@@ -90,10 +68,7 @@ export const ContentHero = styled(Wrapper)`
     display: flex;
     justify-content: center;
 
-    h2 {
-      display: none;
-    }
-
+    h2,
     hr {
       display: none;
     }

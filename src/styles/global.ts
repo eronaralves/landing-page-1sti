@@ -27,4 +27,18 @@ export const Wrapper = styled.div`
   max-width: 1227px;
   height: 100%;
   margin: 0 auto;
+
+  padding-inline: 73px;
+
+  @media (max-width: 820px) {
+    padding-inline: 50px;
+  }
+
+  @media (max-width: 750px) {
+    padding-inline: 30px;
+  }
+
+  @media (max-width: 630px) {
+    padding-inline: 20px;
+  }
 `;
