@@ -1,7 +1,5 @@
-import React from 'react'
-
-// import { Container } from './styles';
+import React from 'react';
 
 export default function Contact() {
-  return <h1>honas</h1>
+  return <h1>Contact</h1>;
 }
