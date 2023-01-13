@@ -38,7 +38,7 @@ export const Wrapper = styled.div`
     padding-inline: 30px;
   }
 
-  @media (max-width: 630px) {
+  @media (max-width: 360px) {
     padding-inline: 20px;
   }
 `;

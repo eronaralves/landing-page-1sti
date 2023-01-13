@@ -4,6 +4,9 @@ import * as S from './styles';
 // Icons
 import { GrCirclePlay } from 'react-icons/gr';
 
+// Components
+import { Services } from './components/Services';
+
 export default function Home() {
   return (
     <S.Container>
@@ -35,6 +38,13 @@ export default function Home() {
           </S.BoxButtons>
         </S.ContentHero>
       </header>
+      <main>
+        <Services />
+
+        <div>
+          <h1>idsahdhdh</h1>
+        </div>
+      </main>
     </S.Container>
   );
 }
