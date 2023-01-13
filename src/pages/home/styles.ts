@@ -47,6 +47,8 @@ export const ContentHero = styled(Wrapper)`
 
   position: relative;
 
+  background: transparent;
+
   h2 {
     font-family: ${({ theme }) => theme.fonts.goshaSans.bold};
     font-size: 1.5rem;
