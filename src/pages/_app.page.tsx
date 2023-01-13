@@ -14,8 +14,6 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
 
-  padding-top: 1.1875rem;
-
   background-color: ${({ theme }) => theme.colors.green800};
 `;
 

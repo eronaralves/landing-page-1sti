@@ -3,6 +3,7 @@ import { Wrapper } from '../../styles/global';
 
 export const Container = styled.main`
   width: 100%;
+  padding-top: 93px;
 `;
 
 export const Header = styled.header`
@@ -45,13 +46,13 @@ export const ContentHero = styled(Wrapper)`
   flex-direction: column;
   justify-content: center;
 
-  position: relative;
+  background-color: transparent;
 
-  background: transparent;
+  position: relative;
 
   h2 {
     font-family: ${({ theme }) => theme.fonts.goshaSans.bold};
-    font-size: 1.5rem;
+    font-size: 2.125rem;
     margin-bottom: 30px;
   }
 
