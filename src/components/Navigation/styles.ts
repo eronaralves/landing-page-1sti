@@ -17,23 +17,27 @@ export const Container = styled.nav`
 
   position: fixed;
   overflow: auto;
-  opacity: 1;
 
   z-index: 5;
 `;
 
-export const Content = styled(Wrapper)`
+export const WrapperNav = styled.div`
   height: 93px;
+  border-top: 19px solid ${({ theme }) => theme.colors.green800};
+  opacity: 1;
+
+  background: rgb(207 207 207 / 67%);
+  backdrop-filter: blur(8.4px);
+  -webkit-backdrop-filter: blur(8.4px);
+`;
+
+export const Content = styled(Wrapper)`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   margin: 0 auto;
-  border-top: 19px solid ${({ theme }) => theme.colors.green800};
   z-index: 9;
-  background: rgb(207 207 207 / 67%);
-  backdrop-filter: blur(8.4px);
-  -webkit-backdrop-filter: blur(8.4px);
 
   img {
     width: 50px;
