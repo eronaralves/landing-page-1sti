@@ -16,7 +16,7 @@ export const Container = styled.div`
 
   padding-block: 70px;
 
-  position: absolute;
+  position: relative;
   z-index: 2;
 
   display: flex;
