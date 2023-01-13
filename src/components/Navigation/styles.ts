@@ -13,25 +13,27 @@ interface ILaguange {
 
 export const Container = styled.nav`
   width: 100%;
-  height: 93px;
+  height: 100%;
 
   position: fixed;
+  overflow: auto;
   opacity: 1;
 
-  border-top: 19px solid ${({ theme }) => theme.colors.green800};
-
-  z-index: 9;
-  background: rgb(207 207 207 / 67%);
-  backdrop-filter: blur(8.4px);
-  -webkit-backdrop-filter: blur(8.4px);
+  z-index: 5;
 `;
 
 export const Content = styled(Wrapper)`
+  height: 93px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   margin: 0 auto;
+  border-top: 19px solid ${({ theme }) => theme.colors.green800};
+  z-index: 9;
+  background: rgb(207 207 207 / 67%);
+  backdrop-filter: blur(8.4px);
+  -webkit-backdrop-filter: blur(8.4px);
 
   img {
     width: 50px;
