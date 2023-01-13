@@ -6,6 +6,7 @@ import { GrCirclePlay } from 'react-icons/gr';
 
 // Components
 import { Services } from './components/Services';
+import { JourneyActive } from './components/JourneysActive';
 
 export default function Home() {
   return (
@@ -40,10 +41,7 @@ export default function Home() {
       </header>
       <main>
         <Services />
-
-        <div>
-          <h1>idsahdhdh</h1>
-        </div>
+        <JourneyActive />
       </main>
     </S.Container>
   );

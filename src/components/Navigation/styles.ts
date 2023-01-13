@@ -12,11 +12,13 @@ interface ILaguange {
 }
 
 export const Container = styled.nav`
-  position: relative;
   width: 100%;
-  height: 74px;
+  height: 93px;
 
+  position: fixed;
   opacity: 1;
+
+  border-top: 19px solid ${({ theme }) => theme.colors.green800};
 
   z-index: 9;
   background: rgb(207 207 207 / 67%);
