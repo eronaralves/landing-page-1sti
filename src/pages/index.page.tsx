@@ -1,44 +1,34 @@
 // Utils
-import { useEffect, useState } from 'react';
 import { initializeApollo } from '../utils/apollo';
-import { GET_HERO_VIDEO_QUERY } from '../utils/querys';
-import { GetServerSideProps } from 'next';
+import { gql } from '@apollo/client';
 
 import Home from './home/index.page';
 
 export default function HomePage(props: any) {
-  const [data, setData] = useState([]);
-  const apolloClient = initializeApollo();
-
-  async function getData() {
-    const { data: response } = await apolloClient.query({
-      query: GET_HERO_VIDEO_QUERY,
-    });
-
-    setData(response);
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const newProps = {
-    ...data,
-  };
+  const newProps = props || {};
 
   return <Home {...newProps} />;
 }
 
-export async function getServerSideProps() {
+export const getServerSideProps = async (context: any) => {
   const apolloClient = initializeApollo();
 
   const { data } = await apolloClient.query({
-    query: GET_HERO_VIDEO_QUERY,
+    query: gql`
+      query {
+        homeHeroes(locales: [${context.locale}]) {
+          id
+          title
+        }
+      }
+    `,
   });
+
+  const hero = data.homeHeroes[0];
 
   return {
     props: {
-      videos: data,
+      hero,
     },
   };
-}
+};

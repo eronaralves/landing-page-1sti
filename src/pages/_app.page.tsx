@@ -28,7 +28,6 @@ export default function App({ Component, pageProps }: AppProps) {
     <ApolloProvider client={client}>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
-
         <LanguageProvider>
           <Container>
             <Navigation />
@@ -39,3 +38,27 @@ export default function App({ Component, pageProps }: AppProps) {
     </ApolloProvider>
   );
 }
+
+// export const getServerSideProps = async (context: any) => {
+//   const apolloClient = initializeApollo();
+
+//   console.log(context);
+
+//   const { data } = await apolloClient.query({
+//     query: gql`
+//       query {
+//         videos {
+//           coverVideo {
+//             url
+//           }
+//         }
+//       }
+//     `,
+//   });
+
+//   return {
+//     props: {
+//       videos: data.videos,
+//     },
+//   };
+// };

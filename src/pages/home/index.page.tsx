@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Styles
 import * as S from './styles';
 
@@ -9,8 +11,6 @@ import { Services } from './components/Services';
 import { JourneyActive } from './components/JourneysActive';
 
 export default function Home(props: any) {
-  console.log(props);
-
   return (
     <S.Container>
       <header>
@@ -20,9 +20,7 @@ export default function Home(props: any) {
           </S.Video>
         </S.VideoContainer>
         <S.ContentHero>
-          <S.Title>
-            Tecnologia <br /> com Alma e Impacto
-          </S.Title>
+          <S.Title>{props.hero.title}</S.Title>
           <hr />
           <h2>Para grandes desafios</h2>
           <S.ParagraphExplication>
