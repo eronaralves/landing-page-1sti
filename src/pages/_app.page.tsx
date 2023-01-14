@@ -1,4 +1,7 @@
 import type { AppProps } from 'next/app';
+import { ApolloProvider } from '@apollo/client';
+import { useApollo } from '../utils/apollo';
+
 import '../styles/fonts.css';
 
 // Theme
@@ -18,16 +21,21 @@ const Container = styled.div`
 `;
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyles />
+  // instanciando o client, com initialState para cache
+  const client = useApollo(pageProps.initialApolloState);
 
-      <LanguageProvider>
-        <Container>
-          <Navigation />
-          <Component {...pageProps} />
-        </Container>
-      </LanguageProvider>
-    </ThemeProvider>
+  return (
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={defaultTheme}>
+        <GlobalStyles />
+
+        <LanguageProvider>
+          <Container>
+            <Navigation />
+            <Component {...pageProps} />
+          </Container>
+        </LanguageProvider>
+      </ThemeProvider>
+    </ApolloProvider>
   );
 }

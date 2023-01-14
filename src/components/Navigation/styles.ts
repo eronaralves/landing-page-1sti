@@ -13,12 +13,11 @@ interface ILaguange {
 
 export const Container = styled.nav`
   width: 100%;
-  height: 100%;
 
   position: fixed;
   overflow: auto;
 
-  z-index: 5;
+  z-index: 9;
 `;
 
 export const WrapperNav = styled.div`

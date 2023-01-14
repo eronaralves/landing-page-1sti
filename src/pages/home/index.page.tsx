@@ -8,7 +8,9 @@ import { GrCirclePlay } from 'react-icons/gr';
 import { Services } from './components/Services';
 import { JourneyActive } from './components/JourneysActive';
 
-export default function Home() {
+export default function Home(props: any) {
+  console.log(props);
+
   return (
     <S.Container>
       <header>

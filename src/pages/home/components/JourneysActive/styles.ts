@@ -14,7 +14,7 @@ export const Container = styled(Wrapper)`
 `;
 
 export const ContainerParthers = styled.div`
-  max-width: 1200px;
+  max-width: 800px;
 
   display: flex;
   flex-direction: column;
