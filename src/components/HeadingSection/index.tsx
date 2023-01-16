@@ -12,7 +12,7 @@ interface ILayoutSectionProps {
   href: string;
 }
 
-export function LayoutSection({
+export function HeadingSection({
   title,
   labelButton,
   paragraph,
