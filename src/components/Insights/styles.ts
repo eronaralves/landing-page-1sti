@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Swiper } from 'swiper/react';
-import { Wrapper } from '../../../../styles/global';
+import { Wrapper } from '../../styles/global';
 
 export const Container = styled(Wrapper)`
   margin-top: 240px;
