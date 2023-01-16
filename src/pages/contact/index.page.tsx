@@ -9,7 +9,7 @@ export default function Contact(props: any) {
   console.log(props.data.homeHeroes[0].title);
   const router = useRouter();
 
-  const handleRoute = (locale) =>
+  const handleRoute = (locale: 'en' | 'pt_BR') =>
     router.push(router.asPath, router.asPath, { locale });
 
   return (
