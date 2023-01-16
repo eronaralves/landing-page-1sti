@@ -9,6 +9,7 @@ import { GrCirclePlay } from 'react-icons/gr';
 // Components
 import { Services } from './components/Services';
 import { JourneyActive } from './components/JourneysActive';
+import { Insights } from './components/Insights';
 
 // Interface
 interface IHome {
@@ -18,6 +19,9 @@ interface IHome {
     description: string;
     buttonDeepTech: string;
     buttonClients: string;
+    video: {
+      url: string;
+    };
   };
 }
 
@@ -27,7 +31,7 @@ export default function Home({ hero }: IHome) {
       <header>
         <S.VideoContainer>
           <S.Video loop={true} muted={true} autoPlay={true}>
-            <source src="/videos/deep-tech.mp4" type="video/mp4" />
+            <source src={hero.video.url} type="video/mp4" />
           </S.Video>
         </S.VideoContainer>
         <S.ContentHero>
@@ -49,6 +53,7 @@ export default function Home({ hero }: IHome) {
       <main>
         <Services />
         <JourneyActive />
+        <Insights />
       </main>
     </S.Container>
   );

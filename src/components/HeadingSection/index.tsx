@@ -3,24 +3,23 @@ import * as S from './styles';
 
 // Components
 import { Button } from '../Button';
-import { ReactNode } from 'react';
 
 // interface
 interface ILayoutSectionProps {
-  children?: ReactNode;
-  title?: string;
-  paragraph?: string;
-  labelButton?: string;
+  title: string;
+  paragraph: string;
+  labelButton: string;
+  href: string;
 }
 
 export function LayoutSection({
-  children,
   title,
   labelButton,
   paragraph,
+  href,
 }: ILayoutSectionProps) {
   return (
-    <S.BoxInformations>
+    <S.BoxInformations href={href}>
       <S.Title>{title}</S.Title>
       <S.Paragraph>{paragraph}</S.Paragraph>
       <Button label={labelButton} />
