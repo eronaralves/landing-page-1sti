@@ -1,8 +1,11 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
-export const BoxInformations = styled.div`
+export const BoxInformations = styled(Link)`
   width: 100%;
   max-width: 250px;
+
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Title = styled.h2`

@@ -38,13 +38,29 @@ export const Content = styled(Wrapper)`
   margin: 0 auto;
   z-index: 9;
 
-  img {
+  @media (max-width: 630px) {
+    justify-content: center;
+  }
+`;
+
+export const BoxLogo = styled.div`
+  img:nth-child(1) {
     width: 50px;
     height: 50px;
   }
 
-  @media (max-width: 630px) {
-    justify-content: center;
+  img:nth-child(2) {
+    display: none;
+  }
+
+  &:hover {
+    img:nth-child(1) {
+      display: none;
+    }
+
+    img:nth-child(2) {
+      display: flex;
+    }
   }
 `;
 

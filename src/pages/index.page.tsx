@@ -21,7 +21,10 @@ export const getServerSideProps = async (context: any) => {
           description
           subtitle
           buttonClients,
-          buttonDeepTech
+          buttonDeepTech,
+          video {
+            url
+          }
         }
       }
     `,

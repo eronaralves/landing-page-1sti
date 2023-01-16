@@ -9,6 +9,7 @@ import { CONSTS } from '../../utils';
 
 // Images
 import Logo from '../../assets/images/logo-1sti.png';
+import LogoAnimation from '../../assets/images/logo-animation.svg';
 
 // Icons
 import { VscMenu, VscChromeClose } from 'react-icons/vsc';
@@ -71,9 +72,15 @@ export function Navigation() {
     <S.Container>
       <S.WrapperNav>
         <S.Content>
-          <Link href="/">
-            <Image src={Logo} alt="Circulo preto escrito 1sti dentro" />
-          </Link>
+          <S.BoxLogo>
+            <Link href="/">
+              <Image src={Logo} alt="Circulo preto escrito 1sti dentro" />
+              <Image
+                src={LogoAnimation}
+                alt="Circulo preto escrito 1sti dentro"
+              />
+            </Link>
+          </S.BoxLogo>
 
           <S.MenuHamburguer>
             {isOpenMenuMobile ? (
