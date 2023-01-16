@@ -17,8 +17,11 @@ export const getServerSideProps = async (context: any) => {
     query: gql`
       query {
         homeHeroes(locales: [${context.locale}]) {
-          id
           title
+          description
+          subtitle
+          buttonClients,
+          buttonDeepTech
         }
       }
     `,
