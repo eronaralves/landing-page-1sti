@@ -14,7 +14,7 @@ export const Container = styled(Wrapper)`
 `;
 
 export const ContainerParthers = styled.div`
-  max-width: 1200px;
+  flex: 1;
 
   display: flex;
   flex-direction: column;
@@ -24,6 +24,11 @@ export const ContainerParthers = styled.div`
 
   @media (max-width: 1283px) {
     margin-top: 0px;
+  }
+
+  @media (max-width: 920px) {
+    width: 100%;
+    flex: initial;
   }
 
   @media (max-width: 700px) {
@@ -73,6 +78,12 @@ export const PartnersIEducation = styled.div`
     height: auto;
     aspect-ratio: 3/2;
     object-fit: contain;
+  }
+
+  @media (max-width: 920px) {
+    img {
+      width: 30%;
+    }
   }
 
   @media (max-width: 700px) {

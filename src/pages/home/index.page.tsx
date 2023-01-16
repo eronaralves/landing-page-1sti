@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Styles
 import * as S from './styles';
 
@@ -8,7 +10,18 @@ import { GrCirclePlay } from 'react-icons/gr';
 import { Services } from './components/Services';
 import { JourneyActive } from './components/JourneysActive';
 
-export default function Home() {
+// Interface
+interface IHome {
+  hero: {
+    title: string;
+    subtitle: string;
+    description: string;
+    buttonDeepTech: string;
+    buttonClients: string;
+  };
+}
+
+export default function Home({ hero }: IHome) {
   return (
     <S.Container>
       <header>
@@ -18,23 +31,17 @@ export default function Home() {
           </S.Video>
         </S.VideoContainer>
         <S.ContentHero>
-          <S.Title>
-            Tecnologia <br /> com Alma e Impacto
-          </S.Title>
+          <S.Title>{hero.title}</S.Title>
           <hr />
-          <h2>Para grandes desafios</h2>
-          <S.ParagraphExplication>
-            Explore novos caminhos para resolver os desafios mais complexos de
-            sua organização. Pioneira em Deep Tech, a 1STi está pronta para
-            inserir sua empresa em uma jornada de tecnologia com alma e impacto.
-          </S.ParagraphExplication>
+          <h2>{hero.subtitle}</h2>
+          <S.ParagraphExplication>{hero.description}</S.ParagraphExplication>
           <S.BoxButtons>
             <S.ButtonDeepTech>
               <GrCirclePlay size={22} />
-              <span>Entenda Deep Tech</span>
+              <span>{hero.buttonDeepTech}</span>
             </S.ButtonDeepTech>
             <S.ButtonCLient>
-              <span>Nossos clientes</span>
+              <span>{hero.buttonClients}</span>
             </S.ButtonCLient>
           </S.BoxButtons>
         </S.ContentHero>

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const BoxInformations = styled.div`
-  flex: 1;
+  width: 100%;
+  max-width: 250px;
 `;
 
 export const Title = styled.h2`

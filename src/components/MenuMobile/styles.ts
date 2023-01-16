@@ -17,7 +17,6 @@ export const Container = styled.div`
   padding-block: 70px;
 
   position: relative;
-  z-index: 2;
 
   display: flex;
   flex-direction: column;

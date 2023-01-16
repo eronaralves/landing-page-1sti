@@ -6,6 +6,11 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  html, body, #__next {
+    width: 100%;
+    height: 100%;
+  }
   
   body {
     color: ${({ theme }) => theme.colors.white};
