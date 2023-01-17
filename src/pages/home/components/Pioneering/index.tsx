@@ -1,13 +1,13 @@
 import { useState } from 'react';
+import Image from 'next/image';
 
 // Components
-import Image from 'next/image';
-import { HeadingSection } from '../HeadingSection';
+import { HeadingSection } from '../../../../components/HeadingSection';
 
 // Images
-import Book from '../../assets/images/book-pioneering.svg';
-import ArrowLeft from '../../assets/images/arrow-left.png';
-import ArrowRight from '../../assets/images/arrow-right.png';
+import Book from '../../../../assets/images/book-pioneering.svg';
+import ArrowLeft from '../../../../assets/images/arrow-left.png';
+import ArrowRight from '../../../../assets/images/arrow-right.png';
 
 // Styles
 import * as S from './styles';

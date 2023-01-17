@@ -5,12 +5,12 @@ import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 // images
-import Modal1 from '../../assets/images/modal-1.png';
-import Modal2 from '../../assets/images/modal-2.png';
-import Modal3 from '../../assets/images/modal3.png';
+import Modal1 from '../../../../assets/images/modal-1.png';
+import Modal2 from '../../../../assets/images/modal-2.png';
+import Modal3 from '../../../../assets/images/modal3.png';
 
 // Components
-import { HeadingSection } from '../../components/HeadingSection';
+import { HeadingSection } from '../../../../components/HeadingSection';
 
 // Styles
 import * as S from './styles';

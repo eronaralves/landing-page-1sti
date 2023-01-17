@@ -1,19 +1,19 @@
 import Image from 'next/image';
 
 // Images
-import Cogna from '../../assets/images/cogna.png';
-import Somos from '../../assets/images/somos.png';
-import CurzeiroSul from '../../assets/images/cruzeiro-sul.png';
-import Laureate from '../../assets/images/laureate.png';
-import SirioLibanes from '../../assets/images/sirio.png';
-import SulAmerica from '../../assets/images/sulamerica.png';
-import Marisa from '../../assets/images/marisa.svg';
+import Cogna from '../../../../assets/images/cogna.png';
+import Somos from '../../../../assets/images/somos.png';
+import CurzeiroSul from '../../../../assets/images/cruzeiro-sul.png';
+import Laureate from '../../../../assets/images/laureate.png';
+import SirioLibanes from '../../../../assets/images/sirio.png';
+import SulAmerica from '../../../../assets/images/sulamerica.png';
+import Marisa from '../../../../assets/images/marisa.svg';
 
 // Styles
 import * as S from './styles';
 
 // Components
-import { HeadingSection } from '../HeadingSection';
+import { HeadingSection } from '../../../../components/HeadingSection';
 
 export function JourneyActive() {
   return (

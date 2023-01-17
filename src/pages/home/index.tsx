@@ -8,9 +8,10 @@ import { GrCirclePlay } from 'react-icons/gr';
 
 // Components
 import { Services } from '../../components/Services';
-import { JourneyActive } from '../../components/JourneysActive';
-import { Insights } from '../../components/Insights';
-import { Pioneering } from '../../components/Pioneering';
+import { JourneyActive } from './components/JourneysActive';
+import { Insights } from './components/Insights';
+import { Pioneering } from './components/Pioneering';
+import { CardNotifications } from '../../components/CardNotifications';
 
 // Interface
 interface IHome {
@@ -56,6 +57,7 @@ export default function Home({ hero }: IHome) {
         <JourneyActive />
         <Insights />
         <Pioneering />
+        <CardNotifications />
       </main>
     </S.Container>
   );

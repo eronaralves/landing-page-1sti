@@ -1,14 +1,15 @@
 import styled from 'styled-components';
-import { Wrapper } from '../../styles/global';
+import { Wrapper } from '../../../../styles/global';
 
 export const Container = styled(Wrapper)`
   display: flex;
   gap: 5%;
 
-  margin-top: 250px;
+  margin-block: 250px;
 
   @media (max-width: 750px) {
     flex-wrap: wrap;
+    margin-bottom: 100px;
   }
 `;
 
