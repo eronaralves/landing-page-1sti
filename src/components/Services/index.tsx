@@ -1,5 +1,5 @@
 // Styles
-import { CardServices } from '../../../../components/CardServices';
+import { CardServices } from '../CardServices';
 import * as S from './styles';
 
 // Interfaces
