@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // Components
 import Image from 'next/image';
@@ -19,7 +19,7 @@ interface ModalText {
 }
 
 export function Pioneering() {
-  const [modalTexts, setModalTexts] = useState<ModalText[]>([
+  const [modalTexts] = useState<ModalText[]>([
     {
       paragraph:
         '“A powerful blueprint for developing a 21st-century purposeful organisation. CEOSs, designers and technologists alike will all take inspiration from this transdiscuplinary approach to Deep Tech.”',
