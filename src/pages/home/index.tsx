@@ -10,6 +10,7 @@ import { GrCirclePlay } from 'react-icons/gr';
 import { Services } from '../../components/Services';
 import { JourneyActive } from '../../components/JourneysActive';
 import { Insights } from '../../components/Insights';
+import { Pioneering } from '../../components/Pioneering';
 
 // Interface
 interface IHome {
@@ -54,6 +55,7 @@ export default function Home({ hero }: IHome) {
         <Services />
         <JourneyActive />
         <Insights />
+        <Pioneering />
       </main>
     </S.Container>
   );
