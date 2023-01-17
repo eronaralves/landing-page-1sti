@@ -21,7 +21,7 @@ export const Paragraph = styled.p`
   width: 100%;
   max-width: 280px;
 
-  font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.medium};
+  font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.regular};
   font-size: 1.125rem;
 
   margin-bottom: 18px;
