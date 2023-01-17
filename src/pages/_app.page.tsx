@@ -5,20 +5,15 @@ import { useApollo } from '../utils/apollo';
 import '../styles/fonts.css';
 
 // Theme
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../styles/global';
 import { defaultTheme } from '../styles/theme/default';
 
 // Components
 import { Navigation } from '../components/Navigation';
-import { LanguageProvider } from '../context/app.context';
 
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-
-  background-color: ${({ theme }) => theme.colors.green800};
-`;
+// Context
+import { AppProvider } from '../context/app.context';
 
 export default function App({ Component, pageProps }: AppProps) {
   // instanciando o client, com initialState para cache
@@ -28,12 +23,12 @@ export default function App({ Component, pageProps }: AppProps) {
     <ApolloProvider client={client}>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
-        <LanguageProvider>
-          <Container>
-            <Navigation />
+        <AppProvider>
+          <Navigation />
+          <main className="main">
             <Component {...pageProps} />
-          </Container>
-        </LanguageProvider>
+          </main>
+        </AppProvider>
       </ThemeProvider>
     </ApolloProvider>
   );

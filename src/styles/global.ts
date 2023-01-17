@@ -11,6 +11,10 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     height: 100%;
   }
+
+  .main {
+    padding-top: 93px;
+  }
   
   body {
     color: ${({ theme }) => theme.colors.white};
@@ -30,7 +34,6 @@ export const GlobalStyles = createGlobalStyle`
 export const Wrapper = styled.div`
   width: 100%;
   max-width: 1367px;
-  height: 100%;
   margin: 0 auto;
 
   padding-inline: 73px;
