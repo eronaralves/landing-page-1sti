@@ -1,14 +1,8 @@
 import styled from 'styled-components';
 import { Wrapper } from '../../styles/global';
 
-export const Container = styled.main`
+export const Container = styled.div`
   width: 100%;
-  padding-top: 93px;
-`;
-
-export const Header = styled.header`
-  width: 100%;
-  position: relative;
 `;
 
 export const VideoContainer = styled.div`

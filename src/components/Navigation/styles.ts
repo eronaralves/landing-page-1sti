@@ -13,7 +13,6 @@ interface ILaguange {
 
 export const Container = styled.nav`
   width: 100%;
-
   position: fixed;
   overflow: auto;
 
@@ -31,6 +30,7 @@ export const WrapperNav = styled.div`
 `;
 
 export const Content = styled(Wrapper)`
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
