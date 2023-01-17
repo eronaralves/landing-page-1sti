@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 // Form
 import { useForm } from 'react-hook-form';
@@ -23,30 +23,30 @@ const formSchema = yup.object({
 type FormInputs = yup.InferType<typeof formSchema>;
 
 export function InputNotification() {
-  const [input, setInput] = useState('');
   const theme = useTheme();
+
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitSuccessful },
   } = useForm<FormInputs>({
     resolver: yupResolver(formSchema),
   });
 
-  async function handleEmailSubmit(data: FormInputs) {
-    console.log(data);
+  function handleEmailSubmit(data: FormInputs) {
+    setValue('email', 'Obrigado');
   }
 
   return (
     <S.Form onSubmit={handleSubmit(handleEmailSubmit)}>
       <S.BoxInput>
         <input
-          type="text"
+          type="email"
           placeholder="Cadastre-se"
-          value={isSubmitSuccessful ? 'Obrigado' : input}
           autoComplete="off"
           {...register('email')}
-          onChange={(e) => setInput(e.target.value)}
+          disabled={isSubmitSuccessful}
         />
 
         <button type="submit" disabled={isSubmitSuccessful}>

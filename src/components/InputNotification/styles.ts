@@ -3,6 +3,19 @@ import styled from 'styled-components';
 export const Form = styled.form`
   width: 100%;
   max-width: 289px;
+
+  & > span {
+    width: 100%;
+    height: 20px;
+
+    margin-top: 5px;
+
+    display: block;
+
+    font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.regular};
+
+    color: #fff;
+  }
 `;
 
 export const BoxInput = styled.div`
