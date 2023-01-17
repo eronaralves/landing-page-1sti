@@ -33,7 +33,7 @@ export function Pioneering() {
         '— Giuliano Michel Fernandes, Head of Marketing and Communications, CBMM',
     },
   ]);
-  const [textCurrent, setTextCurrent] = useState<ModalText>();
+  const [textCurrent, setTextCurrent] = useState<ModalText>(modalTexts[0]);
 
   const currentText = modalTexts?.findIndex(
     (text) => text?.paragraph === textCurrent?.paragraph,
@@ -46,10 +46,6 @@ export function Pioneering() {
   function handlePrevText() {
     setTextCurrent(modalTexts[currentText - 1]);
   }
-
-  useEffect(() => {
-    setTextCurrent(modalTexts[0]);
-  }, []);
 
   return (
     <S.Container>

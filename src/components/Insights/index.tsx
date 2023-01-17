@@ -1,13 +1,13 @@
-import Image, { StaticImageData } from 'next/image';
+// import Image, { StaticImageData } from 'next/image';
 
 // Carrosel
-import { SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+// import { SwiperSlide } from 'swiper/react';
+// import 'swiper/css';
 
 // images
-import Modal1 from '../../assets/images/modal-1.png';
-import Modal2 from '../../assets/images/modal-2.png';
-import Modal3 from '../../assets/images/modal3.png';
+// import Modal1 from '../../assets/images/modal-1.png';
+// import Modal2 from '../../assets/images/modal-2.png';
+// import Modal3 from '../../assets/images/modal3.png';
 
 // Components
 import { HeadingSection } from '../../components/HeadingSection';
@@ -16,30 +16,30 @@ import { HeadingSection } from '../../components/HeadingSection';
 import * as S from './styles';
 
 // Interface
-interface ISlider {
-  title: string;
-  type: string;
-  image: StaticImageData;
-}
+// interface ISlider {
+//   title: string;
+//   type: string;
+//   image: StaticImageData;
+// }
 
 export function Insights() {
-  const slides = [
-    {
-      title: 'O que é Agilidade Aumentada?',
-      type: 'Artigo',
-      image: Modal1,
-    },
-    {
-      title: 'Deep Tech e o Futuro da Educação',
-      type: 'Editorial',
-      image: Modal2,
-    },
-    {
-      title: 'Horizonte Digital',
-      type: 'Artigo',
-      image: Modal3,
-    },
-  ] as ISlider[];
+  // const slides = [
+  //   {
+  //     title: 'O que é Agilidade Aumentada?',
+  //     type: 'Artigo',
+  //     image: Modal1,
+  //   },
+  //   {
+  //     title: 'Deep Tech e o Futuro da Educação',
+  //     type: 'Editorial',
+  //     image: Modal2,
+  //   },
+  //   {
+  //     title: 'Horizonte Digital',
+  //     type: 'Artigo',
+  //     image: Modal3,
+  //   },
+  // ] as ISlider[];
 
   return (
     <S.Container>
@@ -50,7 +50,7 @@ export function Insights() {
         labelButton="Acesse nosso arquivo"
       />
 
-      <S.SwiperContainer
+      {/* <S.SwiperContainer
         slidesPerView={1.5}
         spaceBetween={30}
         onSlideChange={() => console.log('slide change')}
@@ -80,7 +80,7 @@ export function Insights() {
             )}
           </SwiperSlide>
         ))}
-      </S.SwiperContainer>
+      </S.SwiperContainer> */}
     </S.Container>
   );
 }
