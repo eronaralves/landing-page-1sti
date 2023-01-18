@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Utils
 import { initializeApollo } from '../utils/apollo';
 import { gql } from '@apollo/client';

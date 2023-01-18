@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+
+import Image from 'next/image';
 
 // Components
-import Image from 'next/image';
-import { HeadingSection } from '../HeadingSection';
+import { HeadingSection } from '../../../../components/HeadingSection';
 
 // Images
-import Book from '../../assets/images/book-pioneering.svg';
-import ArrowLeft from '../../assets/images/arrow-left.png';
-import ArrowRight from '../../assets/images/arrow-right.png';
+import Book from '../../../../assets/images/book-pioneering.png';
+import ArrowLeft from '../../../../assets/images/arrow-left.png';
+import ArrowRight from '../../../../assets/images/arrow-right.png';
 
 // Styles
 import * as S from './styles';
@@ -60,11 +62,21 @@ export function Pioneering() {
         <Image src={Book} alt="" />
 
         <S.ModalTexts>
-          <S.BoxTextsModal>
-            <S.Text>{textCurrent?.paragraph}</S.Text>
-            <span> {textCurrent?.author}</span>
-          </S.BoxTextsModal>
-
+          <AnimatePresence>
+            <S.BoxTextsModal
+              initial={{ x: 200, opacity: 0, position: 'initial' }}
+              animate={{ x: 0, opacity: 1, position: 'sticky' }}
+              transition={{
+                type: 'spring',
+                stiffness: 260,
+                damping: 40,
+              }}
+              key={currentText}
+            >
+              <S.Text>{textCurrent?.paragraph}</S.Text>
+              <span> {textCurrent?.author}</span>
+            </S.BoxTextsModal>
+          </AnimatePresence>
           <S.BoxButtonsArrows>
             <S.ButtonArrow
               disabled={currentText === 0}

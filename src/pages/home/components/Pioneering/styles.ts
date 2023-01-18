@@ -1,14 +1,17 @@
 import styled from 'styled-components';
-import { Wrapper } from '../../styles/global';
+import { motion } from 'framer-motion';
+
+import { Wrapper } from '../../../../styles/global';
 
 export const Container = styled(Wrapper)`
   display: flex;
-  gap: 5%;
+  gap: 15%;
 
-  margin-top: 250px;
+  margin-block: 250px;
 
   @media (max-width: 750px) {
     flex-wrap: wrap;
+    margin-bottom: 100px;
   }
 `;
 
@@ -17,19 +20,22 @@ export const ContentPioneering = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  gap: 50px;
 
   & > img {
-    width: 60%;
-    margin-top: -55px;
+    width: 40%;
+    height: auto;
+    box-shadow: 0 0 20px 3px #00c8dbb8;
+    border-radius: 5px;
   }
 
   @media (max-width: 990px) {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     & > img {
-      width: 50%;
-      margin-top: -55px;
+      width: 70%;
     }
   }
 
@@ -39,11 +45,13 @@ export const ContentPioneering = styled.div`
 
     display: flex;
     justify-content: flex-start;
+    gap: 60px;
+
+    margin-top: 50px;
 
     & > img {
       width: 100%;
       max-width: 322px;
-      margin-top: -30px;
     }
   }
 `;
@@ -56,6 +64,17 @@ export const ModalTexts = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 16px;
+  overflow: hidden;
+
+  @media (max-width: 1070px) {
+    height: 100%;
+  }
+
+  @media (max-width: 990px) {
+    flex: initial;
+    width: 100%;
+    height: 350px;
+  }
 
   @media (max-width: 610px) {
     flex: initial;
@@ -63,7 +82,7 @@ export const ModalTexts = styled.div`
   }
 `;
 
-export const BoxTextsModal = styled.div`
+export const BoxTextsModal = styled(motion.div)`
   width: 100%;
   max-width: 287px;
 
