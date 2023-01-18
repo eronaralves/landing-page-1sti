@@ -17,14 +17,14 @@ interface ILaguange {
 
 export const Container = styled.nav<IContainerProps>`
   width: 100%;
-  height: 100%;
+  height: auto;
   position: fixed;
   overflow: auto;
 
   z-index: 9;
 
-  @media (min-width: 630px) {
-    background-color: transparent;
+  @media (max-width: 630px) {
+    height: 100%;
   }
 
   ${(props) => {
