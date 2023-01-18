@@ -1,9 +1,12 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
 import { Wrapper } from '../../../../styles/global';
 
 export const Container = styled(Wrapper)`
   display: flex;
-  gap: 5%;
+  gap: 15%;
+  overflow: hidden;
 
   margin-block: 250px;
 
@@ -18,20 +21,28 @@ export const ContentPioneering = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  gap: 50px;
 
   & > img {
+    width: 40%;
+    height: auto;
+    box-shadow: 0 0 20px 3px #00c8dbb8;
+    border-radius: 5px;
+  }
+
+  /* & > img {
     width: 60%;
     margin-top: -55px;
-  }
+  } */
 
   @media (max-width: 990px) {
     display: flex;
     justify-content: center;
 
-    & > img {
+    /* & > img {
       width: 50%;
       margin-top: -55px;
-    }
+    } */
   }
 
   @media (max-width: 750px) {
@@ -40,12 +51,12 @@ export const ContentPioneering = styled.div`
 
     display: flex;
     justify-content: flex-start;
-
+    /* 
     & > img {
       width: 100%;
       max-width: 322px;
       margin-top: -30px;
-    }
+    } */
   }
 `;
 
@@ -64,7 +75,7 @@ export const ModalTexts = styled.div`
   }
 `;
 
-export const BoxTextsModal = styled.div`
+export const BoxTextsModal = styled(motion.div)`
   width: 100%;
   max-width: 287px;
 

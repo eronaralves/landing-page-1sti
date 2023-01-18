@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 // Form
 import { useForm } from 'react-hook-form';
@@ -40,7 +41,7 @@ export function InputNotification() {
 
   return (
     <S.Form onSubmit={handleSubmit(handleEmailSubmit)}>
-      <S.BoxInput>
+      <S.BoxInput whileHover="triggerHoverButton">
         <input
           type="email"
           placeholder="Cadastre-se"
@@ -48,10 +49,17 @@ export function InputNotification() {
           {...register('email')}
           disabled={isSubmitSuccessful}
         />
-
-        <button type="submit" disabled={isSubmitSuccessful}>
+        <motion.button
+          variants={{
+            triggerHoverButton: {
+              x: 4,
+            },
+          }}
+          type="submit"
+          disabled={isSubmitSuccessful}
+        >
           <RxArrowRight size={25} color={theme.colors.pink500} />
-        </button>
+        </motion.button>
       </S.BoxInput>
       <span>{errors.email?.message}</span>
     </S.Form>

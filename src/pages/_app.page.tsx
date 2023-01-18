@@ -1,5 +1,7 @@
 import type { AppProps } from 'next/app';
 import { ApolloProvider } from '@apollo/client';
+import { AnimatePresence } from 'framer-motion';
+
 import { useApollo } from '../utils/apollo';
 
 import '../styles/fonts.css';
@@ -20,40 +22,18 @@ export default function App({ Component, pageProps }: AppProps) {
   const client = useApollo(pageProps.initialApolloState);
 
   return (
-    <ApolloProvider client={client}>
-      <ThemeProvider theme={defaultTheme}>
-        <GlobalStyles />
-        <AppProvider>
-          <Navigation />
-          <main className="main">
-            <Component {...pageProps} />
-          </main>
-        </AppProvider>
-      </ThemeProvider>
-    </ApolloProvider>
+    <AnimatePresence mode="wait" initial={false}>
+      <ApolloProvider client={client}>
+        <ThemeProvider theme={defaultTheme}>
+          <GlobalStyles />
+          <AppProvider>
+            <Navigation />
+            <main className="main">
+              <Component {...pageProps} />
+            </main>
+          </AppProvider>
+        </ThemeProvider>
+      </ApolloProvider>
+    </AnimatePresence>
   );
 }
-
-// export const getServerSideProps = async (context: any) => {
-//   const apolloClient = initializeApollo();
-
-//   console.log(context);
-
-//   const { data } = await apolloClient.query({
-//     query: gql`
-//       query {
-//         videos {
-//           coverVideo {
-//             url
-//           }
-//         }
-//       }
-//     `,
-//   });
-
-//   return {
-//     props: {
-//       videos: data.videos,
-//     },
-//   };
-// };

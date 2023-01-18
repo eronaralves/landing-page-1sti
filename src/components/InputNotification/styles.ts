@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Form = styled.form`
   width: 100%;
@@ -18,7 +19,7 @@ export const Form = styled.form`
   }
 `;
 
-export const BoxInput = styled.div`
+export const BoxInput = styled(motion.div)`
   width: 100%;
   position: relative;
 
