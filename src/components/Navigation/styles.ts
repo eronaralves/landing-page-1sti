@@ -23,14 +23,14 @@ export const Container = styled.nav<IContainerProps>`
 
   z-index: 9;
 
-  @media (max-width: 630px) {
-    height: 100%;
-  }
-
   ${(props) => {
     if (props.isMenuMobile) {
       return css`
         background-color: ${({ theme }) => theme.colors.green800};
+
+        @media (max-width: 630px) {
+          height: 100%;
+        }
       `;
     }
   }}
