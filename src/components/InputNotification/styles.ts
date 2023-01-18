@@ -3,24 +3,16 @@ import { motion } from 'framer-motion';
 
 export const Form = styled.form`
   width: 100%;
-  max-width: 289px;
 
-  & > span {
-    width: 100%;
-    height: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    margin-top: 5px;
-
-    display: block;
-
-    font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.regular};
-
-    color: #fff;
-  }
 `;
 
 export const BoxInput = styled(motion.div)`
   width: 100%;
+  max-width: 289px;
   position: relative;
 
   display: flex;
@@ -57,4 +49,18 @@ export const BoxInput = styled(motion.div)`
     border: 0;
     background-color: transparent;
   }
+`;
+
+export const TextError = styled.span`
+  width: 100%;
+  max-width: 289px;
+  height: 20px;
+
+  margin-top: 5px;
+
+  display: block;
+
+  font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.regular};
+
+  color: #fff;
 `;

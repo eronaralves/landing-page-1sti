@@ -43,9 +43,9 @@ export function InputNotification() {
     <S.Form onSubmit={handleSubmit(handleEmailSubmit)}>
       <S.BoxInput whileHover="triggerHoverButton">
         <input
-          type="email"
-          placeholder="Cadastre-se"
+          type="text"
           autoComplete="off"
+          placeholder="Cadastre-se"
           {...register('email')}
           disabled={isSubmitSuccessful}
         />
@@ -61,7 +61,7 @@ export function InputNotification() {
           <RxArrowRight size={25} color={theme.colors.pink500} />
         </motion.button>
       </S.BoxInput>
-      <span>{errors.email?.message}</span>
+      <S.TextError>{errors.email?.message}</S.TextError>
     </S.Form>
   );
 }
