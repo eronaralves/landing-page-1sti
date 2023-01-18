@@ -22,7 +22,7 @@ interface IAppProviderProps {
 
 const AppContext = createContext({} as IAppContextType);
 
-export function AppProvider({ children }: IAppProviderProps) {
+export function AppContextProvider({ children }: IAppProviderProps) {
   const [currentLanguage, setCurrentLanguage] = useState('PT');
 
   const router = useRouter();

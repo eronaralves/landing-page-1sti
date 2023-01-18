@@ -3,11 +3,12 @@ import { Wrapper } from '../../styles/global';
 
 export const Container = styled.div`
   width: 100%;
+  margin-bottom: 100px;
 `;
 
 export const VideoContainer = styled.div`
   width: 100%;
-  max-height: calc(90vh - 74px);
+  max-height: calc(100vh - 74px);
   overflow: hidden;
   position: absolute;
 
@@ -34,7 +35,7 @@ export const Video = styled.video`
 `;
 
 export const ContentHero = styled(Wrapper)`
-  height: calc(90vh - 74px);
+  height: calc(100vh - 74px);
 
   display: flex;
   flex-direction: column;
