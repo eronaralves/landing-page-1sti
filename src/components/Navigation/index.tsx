@@ -69,7 +69,7 @@ export function Navigation() {
   }
 
   return (
-    <S.Container>
+    <S.Container isMenuMobile={isOpenMenuMobile}>
       <S.WrapperNav>
         <S.Content>
           <S.BoxLogo>

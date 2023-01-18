@@ -13,9 +13,10 @@ import { defaultTheme } from '../styles/theme/default';
 
 // Components
 import { Navigation } from '../components/Navigation';
+import { Footer } from '../components/Footer';
 
 // Context
-import { AppProvider } from '../context/app.context';
+import { AppContextProvider } from '../context/app.context';
 
 export default function App({ Component, pageProps }: AppProps) {
   // instanciando o client, com initialState para cache
@@ -26,12 +27,13 @@ export default function App({ Component, pageProps }: AppProps) {
       <ApolloProvider client={client}>
         <ThemeProvider theme={defaultTheme}>
           <GlobalStyles />
-          <AppProvider>
+          <AppContextProvider>
             <Navigation />
             <main className="main">
               <Component {...pageProps} />
             </main>
-          </AppProvider>
+            <Footer />
+          </AppContextProvider>
         </ThemeProvider>
       </ApolloProvider>
     </AnimatePresence>

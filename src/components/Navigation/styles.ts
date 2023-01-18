@@ -2,6 +2,10 @@ import styled, { css } from 'styled-components';
 import { Wrapper } from '../../styles/global';
 
 // Interfaces
+interface IContainerProps {
+  isMenuMobile: boolean;
+}
+
 interface ILinkMenuProps {
   currentRoute: string;
   linkItem: string;
@@ -11,12 +15,25 @@ interface ILaguange {
   currentLaguange: string;
 }
 
-export const Container = styled.nav`
+export const Container = styled.nav<IContainerProps>`
   width: 100%;
+  height: 100%;
   position: fixed;
   overflow: auto;
 
   z-index: 9;
+
+  @media (min-width: 630px) {
+    background-color: transparent;
+  }
+
+  ${(props) => {
+    if (props.isMenuMobile) {
+      return css`
+        background-color: ${({ theme }) => theme.colors.green800};
+      `;
+    }
+  }}
 `;
 
 export const WrapperNav = styled.div`

@@ -3,12 +3,13 @@ import * as S from './styles';
 
 // Interfaces
 interface ButtonProps {
-  label?: string;
+  label: string;
+  className?: string;
 }
 
-export function Button({ label }: ButtonProps) {
+export function Button({ label, className }: ButtonProps) {
   return (
-    <S.Button>
+    <S.Button className={className}>
       <span>{label}</span>
     </S.Button>
   );
