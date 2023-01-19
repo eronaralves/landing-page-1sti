@@ -70,13 +70,15 @@ export const BoxLogo = styled.div`
     display: none;
   }
 
-  &:hover {
-    img:nth-child(1) {
-      display: none;
-    }
+  @media (min-width: 630px) {
+    &:hover {
+      img:nth-child(1) {
+        display: none;
+      }
 
-    img:nth-child(2) {
-      display: flex;
+      img:nth-child(2) {
+        display: flex;
+      }
     }
   }
 `;

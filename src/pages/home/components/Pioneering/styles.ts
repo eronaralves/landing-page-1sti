@@ -56,7 +56,7 @@ export const ContentPioneering = styled.div`
   }
 `;
 
-export const ModalTexts = styled.div`
+export const ContainerSliderTexts = styled.div`
   flex: 1;
   height: 350px;
 
@@ -82,7 +82,7 @@ export const ModalTexts = styled.div`
   }
 `;
 
-export const BoxTextsModal = styled(motion.div)`
+export const BoxTexts = styled(motion.div)`
   width: 100%;
   max-width: 287px;
 
@@ -102,10 +102,18 @@ export const Text = styled.p`
   color: ${({ theme }) => theme.colors.white200};
 `;
 
+export const SliderFooter = styled.div`
+  width: 100%;
+  max-width: 287px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const BoxButtonsArrows = styled.div`
   display: flex;
   gap: 16px;
-
   background-color: transparent;
   border: none;
 `;
@@ -116,6 +124,13 @@ export const ButtonArrow = styled.button`
   border: none;
 
   &:disabled {
-    opacity: 0.7;
+    opacity: 0.5;
+    cursor: initial;
   }
+`;
+
+export const AmountTexts = styled.div`
+  font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.regular};
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.white200};
 `;
