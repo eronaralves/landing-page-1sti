@@ -21,7 +21,7 @@ interface ModalText {
 }
 
 export function Pioneering() {
-  const [modalTexts] = useState<ModalText[]>([
+  const [silderTexts] = useState<ModalText[]>([
     {
       paragraph:
         '“A powerful blueprint for developing a 21st-century purposeful organisation. CEOSs, designers and technologists alike will all take inspiration from this transdiscuplinary approach to Deep Tech.”',
@@ -35,18 +35,18 @@ export function Pioneering() {
         '— Giuliano Michel Fernandes, Head of Marketing and Communications, CBMM',
     },
   ]);
-  const [textCurrent, setTextCurrent] = useState<ModalText>(modalTexts[0]);
+  const [textCurrent, setTextCurrent] = useState<ModalText>(silderTexts[0]);
 
-  const currentText = modalTexts?.findIndex(
+  const currentText = silderTexts?.findIndex(
     (text) => text?.paragraph === textCurrent?.paragraph,
   );
 
   function handleNextText() {
-    setTextCurrent(modalTexts[currentText + 1]);
+    setTextCurrent(silderTexts[currentText + 1]);
   }
 
   function handlePrevText() {
-    setTextCurrent(modalTexts[currentText - 1]);
+    setTextCurrent(silderTexts[currentText - 1]);
   }
 
   return (
@@ -61,9 +61,9 @@ export function Pioneering() {
       <S.ContentPioneering>
         <Image src={Book} alt="" />
 
-        <S.ModalTexts>
+        <S.ContainerSliderTexts>
           <AnimatePresence>
-            <S.BoxTextsModal
+            <S.BoxTexts
               initial={{ x: 200, opacity: 0, position: 'initial' }}
               animate={{ x: 0, opacity: 1, position: 'sticky' }}
               transition={{
@@ -75,23 +75,29 @@ export function Pioneering() {
             >
               <S.Text>{textCurrent?.paragraph}</S.Text>
               <span> {textCurrent?.author}</span>
-            </S.BoxTextsModal>
+            </S.BoxTexts>
           </AnimatePresence>
-          <S.BoxButtonsArrows>
-            <S.ButtonArrow
-              disabled={currentText === 0}
-              onClick={handlePrevText}
-            >
-              <Image src={ArrowLeft} alt="Seta da esquerda da cor roxa" />
-            </S.ButtonArrow>
-            <S.ButtonArrow
-              onClick={handleNextText}
-              disabled={currentText - modalTexts.length + 1 === 0}
-            >
-              <Image src={ArrowRight} alt="Seta da direita da cor roxa" />
-            </S.ButtonArrow>
-          </S.BoxButtonsArrows>
-        </S.ModalTexts>
+          <S.SliderFooter>
+            <S.BoxButtonsArrows>
+              <S.ButtonArrow
+                disabled={currentText === 0}
+                onClick={handlePrevText}
+              >
+                <Image src={ArrowLeft} alt="Seta da esquerda da cor roxa" />
+              </S.ButtonArrow>
+              <S.ButtonArrow
+                onClick={handleNextText}
+                disabled={currentText - silderTexts.length + 1 === 0}
+              >
+                <Image src={ArrowRight} alt="Seta da direita da cor roxa" />
+              </S.ButtonArrow>
+            </S.BoxButtonsArrows>
+
+            <S.AmountTexts>
+              {currentText + 1}/{silderTexts.length}
+            </S.AmountTexts>
+          </S.SliderFooter>
+        </S.ContainerSliderTexts>
       </S.ContentPioneering>
     </S.Container>
   );
