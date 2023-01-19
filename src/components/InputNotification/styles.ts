@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import { Box, CircularProgress } from '@mui/material';
+
 export const Form = styled.form`
   width: 100%;
 
@@ -9,9 +11,14 @@ export const Form = styled.form`
   align-items: center;
 `;
 
-export const BoxInput = styled(motion.div)`
+export const ContainerInput = styled.div`
   width: 100%;
   max-width: 289px;
+  display: flex;
+`;
+
+export const BoxInput = styled(motion.div)`
+  width: 100%;
   position: relative;
 
   display: flex;
@@ -62,4 +69,17 @@ export const TextError = styled.span`
   font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.regular};
 
   color: #fff;
+`;
+
+export const BoxLoading = styled(Box)`
+  position: relative;
+  left: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Loading = styled(CircularProgress)`
+  position: absolute;
 `;

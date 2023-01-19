@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 // Form
@@ -24,6 +24,7 @@ const formSchema = yup.object({
 type FormInputs = yup.InferType<typeof formSchema>;
 
 export function InputNotification() {
+  const [loading, setLoading] = useState(false);
   const theme = useTheme();
 
   const {
@@ -36,31 +37,38 @@ export function InputNotification() {
   });
 
   function handleEmailSubmit(data: FormInputs) {
-    setValue('email', 'Obrigado');
+    setLoading(true);
+    setTimeout(() => {
+      setValue('email', 'Obrigado');
+      setLoading(false);
+    }, 3000);
   }
 
   return (
     <S.Form onSubmit={handleSubmit(handleEmailSubmit)}>
-      <S.BoxInput whileHover="triggerHoverButton">
-        <input
-          type="text"
-          autoComplete="off"
-          placeholder="Cadastre-se"
-          {...register('email')}
-          disabled={isSubmitSuccessful}
-        />
-        <motion.button
-          variants={{
-            triggerHoverButton: {
-              x: 4,
-            },
-          }}
-          type="submit"
-          disabled={isSubmitSuccessful}
-        >
-          <RxArrowRight size={25} color={theme.colors.pink500} />
-        </motion.button>
-      </S.BoxInput>
+      <S.ContainerInput>
+        <S.BoxInput whileHover="triggerHoverButton">
+          <input
+            type="text"
+            autoComplete="off"
+            placeholder="Cadastre-se"
+            {...register('email')}
+            disabled={isSubmitSuccessful}
+          />
+          <motion.button
+            variants={{
+              triggerHoverButton: {
+                x: 4,
+              },
+            }}
+            type="submit"
+            disabled={isSubmitSuccessful}
+          >
+            <RxArrowRight size={25} color={theme.colors.pink500} />
+          </motion.button>
+        </S.BoxInput>
+        <S.BoxLoading>{loading && <S.Loading size="1.2rem" />}</S.BoxLoading>
+      </S.ContainerInput>
       <S.TextError>{errors.email?.message}</S.TextError>
     </S.Form>
   );
