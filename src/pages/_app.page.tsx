@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 import { ApolloProvider } from '@apollo/client';
 import { AnimatePresence } from 'framer-motion';
 
-import { useApollo } from '../utils/apollo';
+import { useApollo } from '../libs/apollo';
 
 import '../styles/fonts.css';
 
