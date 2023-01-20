@@ -4,12 +4,11 @@ import { AnimatePresence } from 'framer-motion';
 
 import { useApollo } from '../libs/apollo';
 
-import '../styles/fonts.css';
-
 // Theme
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../styles/global';
 import { defaultTheme } from '../styles/theme/default';
+import '../styles/fonts.css';
 
 // Components
 import { Navigation } from '../components/Navigation';
