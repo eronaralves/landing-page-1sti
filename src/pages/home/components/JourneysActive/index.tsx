@@ -19,7 +19,7 @@ export function JourneyActive() {
   return (
     <S.Container>
       <HeadingSection
-        href="/contact"
+        hrefButton="/contact"
         labelButton="Inicie sua jornada"
         paragraph="Onde estamos e com quais soluções geramos impactos ampliados."
         title="Jornadas Ativas"

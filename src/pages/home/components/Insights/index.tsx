@@ -44,7 +44,7 @@ export function Insights() {
   return (
     <S.Container>
       <HeadingSection
-        href="/contact"
+        hrefButton="/contact"
         title="Insights"
         paragraph="A abordagem Deep Tech para temas do presente e futuro."
         labelButton="Acesse nosso arquivo"

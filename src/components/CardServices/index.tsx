@@ -13,11 +13,12 @@ interface CardServic {
 
 interface CardServicesProps {
   data: CardServic;
+  className?: string;
 }
 
-export function CardServices({ data }: CardServicesProps) {
+export function CardServices({ data, className }: CardServicesProps) {
   return (
-    <S.ContainerCard href={data.link}>
+    <S.ContainerCard href={data.link} className={className}>
       <div>
         <h2>{data.title}</h2>
         <p>{data.paragraph}</p>

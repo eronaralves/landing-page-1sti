@@ -1,5 +1,4 @@
 // Styles
-import { CardServices } from '../CardServices';
 import * as S from './styles';
 
 // Interfaces
@@ -49,7 +48,7 @@ export function Services() {
         </p>
       </S.ContentServiceText>
       {Services.map((card, index) => (
-        <CardServices key={index} data={card} />
+        <S.Cards key={index} data={card} />
       ))}
     </S.Container>
   );
