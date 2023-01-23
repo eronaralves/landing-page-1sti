@@ -51,7 +51,7 @@ export function InputNotification() {
           <input
             type="text"
             autoComplete="off"
-            placeholder="Cadastre-se"
+            placeholder="Digite seu email"
             {...register('email')}
             disabled={isSubmitSuccessful}
           />
