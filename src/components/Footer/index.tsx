@@ -67,7 +67,11 @@ export function Footer() {
             We are always looking for talent to empower deep tech
             transformations.
           </p>
-          <S.ButtonOpenings label="See openings" />
+          <S.ButtonOpenings
+            href="https://1sti.solides.jobs/vacancies"
+            target="_blank"
+            label="See openings"
+          />
         </S.ContainerOpenings>
       </S.ContainerFooter>
     </S.WrapperContainer>
