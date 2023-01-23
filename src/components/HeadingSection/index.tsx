@@ -1,3 +1,5 @@
+import { HTMLAttributeAnchorTarget } from 'react';
+
 // Styles
 import * as S from './styles';
 
@@ -9,20 +11,22 @@ interface ILayoutSectionProps {
   title: string;
   paragraph: string;
   labelButton: string;
-  href: string;
+  hrefButton: string;
+  targetButton?: HTMLAttributeAnchorTarget;
 }
 
 export function HeadingSection({
   title,
   labelButton,
   paragraph,
-  href,
+  hrefButton = '',
+  targetButton,
 }: ILayoutSectionProps) {
   return (
-    <S.BoxInformations href={href}>
+    <S.BoxInformations>
       <S.Title>{title}</S.Title>
       <S.Paragraph>{paragraph}</S.Paragraph>
-      <Button label={labelButton} />
+      <Button label={labelButton} href={hrefButton} target={targetButton} />
     </S.BoxInformations>
   );
 }

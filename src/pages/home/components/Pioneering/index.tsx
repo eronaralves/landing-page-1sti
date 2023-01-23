@@ -52,7 +52,8 @@ export function Pioneering() {
   return (
     <S.Container>
       <HeadingSection
-        href="/contact"
+        hrefButton="https://deeptechamplified.com/"
+        targetButton="_blank"
         title="Pioneirismo Deep Tech"
         paragraph="Deep Tech and the Amplified Organisation provides readers with a powerful and pivotal multi-disciplinary approach to deep tech which has been created to elevate value propositions, scale platforms and amplify the impact of organisations."
         labelButton="Saiba mais"

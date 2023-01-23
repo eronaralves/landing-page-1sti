@@ -5,7 +5,14 @@ import { CardServices } from '../../components/CardServices';
 import { HeadingServices } from '../../components/HeadingServices';
 import { Wrapper } from '../../styles/global';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: 100%;
+  margin-bottom: 100px;
+
+  @media (max-width: 700px) {
+    margin-bottom: 60px;
+  }
+`;
 
 export const ContainerHero = styled(Wrapper)`
   margin-block: 28px;
