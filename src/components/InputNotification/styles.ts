@@ -13,7 +13,6 @@ export const Form = styled.form`
 
 export const ContainerInput = styled.div`
   width: 100%;
-  max-width: 289px;
   display: flex;
 `;
 
