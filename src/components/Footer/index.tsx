@@ -37,16 +37,25 @@ export function Footer() {
             </S.EcossistemParthers>
           </S.ContainerParthers>
           <S.SocialMidia>
-            <S.LinkSocial href="">
+            <S.LinkSocial
+              href="https://www.linkedin.com/company/1sti/"
+              target="_blank"
+            >
               <RiLinkedinBoxFill size={35} />
             </S.LinkSocial>
-            <S.LinkSocial href="">
+            <S.LinkSocial
+              href="https://www.instagram.com/ola_1sti"
+              target="_blank"
+            >
               <RiInstagramFill size={35} />
             </S.LinkSocial>
-            <S.LinkSocial href="/">
+            <S.LinkSocial href="https://medium.com/1sti" target="_blank">
               <RiMediumFill size={35} />
             </S.LinkSocial>
-            <S.LinkSocial href="">
+            <S.LinkSocial
+              href="https://www.facebook.com/ola1STi/?_rdc=1&_rdr"
+              target="_blank"
+            >
               <RiFacebookBoxFill size={35} />
             </S.LinkSocial>
           </S.SocialMidia>

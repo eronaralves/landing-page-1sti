@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CardServices } from '../../../../components/CardServices';
 
 export const Container = styled.div`
   display: flex;
@@ -42,6 +43,50 @@ export const ContentServiceText = styled.div`
 
   @media (max-width: 750px) {
     padding-inline: 30px;
+  }
+
+  @media (max-width: 360px) {
+    padding-inline: 20px;
+  }
+`;
+
+export const Cards = styled(CardServices)`
+  width: 33.25%;
+
+  @media (max-width: 990px) {
+    width: 49.8%;
+  }
+
+  @media (max-width: 820px) {
+    padding-inline: 50px;
+  }
+
+  @media (max-width: 750px) {
+    padding-inline: 30px;
+    height: 400px;
+  }
+
+  @media (max-width: 430px) {
+    height: 340px;
+    padding-block: 40px;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 27px;
+    }
+
+    span {
+      font-size: 18px;
+
+      gap: 8px;
+
+      color: ${({ theme }) => theme.colors.purple500};
+    }
   }
 
   @media (max-width: 360px) {

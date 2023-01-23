@@ -8,7 +8,7 @@ import * as S from './styles';
 import { GrCirclePlay } from 'react-icons/gr';
 
 // Components
-import { Services } from '../../components/Services';
+import { Services } from './components/Services';
 import { JourneyActive } from './components/JourneysActive';
 import { Insights } from './components/Insights';
 import { Pioneering } from './components/Pioneering';
