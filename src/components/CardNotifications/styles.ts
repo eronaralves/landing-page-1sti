@@ -1,5 +1,8 @@
 import styled from 'styled-components';
+
+// Components
 import { Wrapper } from '../../styles/global';
+import { InputNotification } from '../InputNotification';
 
 export const Container = styled(Wrapper)`
   display: flex;
@@ -50,4 +53,9 @@ export const ContainerCard = styled.div`
       text-align: left;
     }
   }
+`;
+
+export const Input = styled(InputNotification)`
+  width: 100%;
+  max-width: 289px;
 `;

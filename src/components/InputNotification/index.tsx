@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Loading from '@mui/material/CircularProgress';
 
 // Form
 import { useForm } from 'react-hook-form';
@@ -23,7 +24,12 @@ const formSchema = yup.object({
 
 type FormInputs = yup.InferType<typeof formSchema>;
 
-export function InputNotification() {
+// Interfaces
+interface InputNotificationProps {
+  className?: string;
+}
+
+export function InputNotification({ className }: InputNotificationProps) {
   const [loading, setLoading] = useState(false);
   const theme = useTheme();
 
@@ -45,7 +51,7 @@ export function InputNotification() {
   }
 
   return (
-    <S.Form onSubmit={handleSubmit(handleEmailSubmit)}>
+    <S.Form className={className} onSubmit={handleSubmit(handleEmailSubmit)}>
       <S.ContainerInput>
         <S.BoxInput whileHover="triggerHoverButton">
           <input
@@ -55,19 +61,22 @@ export function InputNotification() {
             {...register('email')}
             disabled={isSubmitSuccessful}
           />
-          <motion.button
-            variants={{
-              triggerHoverButton: {
-                x: 4,
-              },
-            }}
-            type="submit"
-            disabled={isSubmitSuccessful}
-          >
-            <RxArrowRight size={25} color={theme.colors.pink500} />
-          </motion.button>
+          {loading ? (
+            <Loading size="1.2rem" />
+          ) : (
+            <motion.button
+              variants={{
+                triggerHoverButton: {
+                  x: 4,
+                },
+              }}
+              type="submit"
+              disabled={isSubmitSuccessful}
+            >
+              <RxArrowRight size={25} color={theme.colors.pink500} />
+            </motion.button>
+          )}
         </S.BoxInput>
-        <S.BoxLoading>{loading && <S.Loading size="1.2rem" />}</S.BoxLoading>
       </S.ContainerInput>
       <S.TextError>{errors.email?.message}</S.TextError>
     </S.Form>

@@ -1,9 +1,6 @@
 // Styles
 import * as S from './styles';
 
-// Components
-import { InputNotification } from '../InputNotification';
-
 export function CardNotifications() {
   return (
     <S.Container>
@@ -14,7 +11,7 @@ export function CardNotifications() {
           tecnologia e mercado com abordagem Deep Tech.
         </p>
 
-        <InputNotification />
+        <S.Input />
       </S.ContainerCard>
     </S.Container>
   );
