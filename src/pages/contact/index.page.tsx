@@ -27,8 +27,10 @@ export default function Contact(props: any) {
         <p className="description-deep-tech">
           We train business, from the frontline to the executive, in the new
           business discipline of Deep Tech. We advise and guide business to make
-          strong and powerful decisions on the principles of deep tech. Contact
-          us to work with Deep Tech and amplify your organization :
+          strong and powerful decisions on the principles of deep tech.
+          <br />
+          <br />
+          Contact us to work with Deep Tech and amplify your organization :
           ola@1sti.com.br
         </p>
 
@@ -41,7 +43,7 @@ export default function Contact(props: any) {
             </p>
             <S.SiteDeepTech>
               <TfiWorld size={22} color={theme.colors.blue100} />
-              <Link href="https://deeptechamplified.com/">
+              <Link href="https://deeptechamplified.com/" target="_blank">
                 deeptechamplified.com/
               </Link>
               <BsArrowUpRight size={22} color={theme.colors.blue100} />

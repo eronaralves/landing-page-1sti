@@ -5,7 +5,7 @@ import { Wrapper } from '../../styles/global';
 
 export const Container = styled(Wrapper)`
   width: 100%;
-  margin-top: 21px;
+  margin-block: 21px 70px;
 
   h1 {
     font-family: ${({ theme }) => theme.fonts.goshaSans.bold};

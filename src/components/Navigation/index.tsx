@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { HTMLAttributeAnchorTarget, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -26,6 +26,7 @@ import { useAppContext } from '../../context/app.context';
 export interface IMenu {
   label: string;
   link: string;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export function Navigation() {
@@ -50,7 +51,8 @@ export function Navigation() {
     },
     {
       label: 'Carreira',
-      link: '/carreira',
+      link: 'https://1sti.solides.jobs/',
+      target: '_blank',
     },
     {
       label: 'Contatos',
@@ -105,7 +107,9 @@ export function Navigation() {
                 currentRoute={currentPath}
                 linkItem={item.link}
               >
-                <Link href={item.link}>{item.label}</Link>
+                <Link href={item.link} target={item.target}>
+                  {item.label}
+                </Link>
               </S.LinkMenu>
             ))}
 
