@@ -6,6 +6,7 @@ export const defaultTheme = {
     black100: '#2222',
     black: '#000',
 
+    gray200: '#696969',
     gray400: '#A3A6AD',
     gray500: '#999999',
     gray600: '#7E7E7E',
@@ -14,6 +15,7 @@ export const defaultTheme = {
     green800: '#0B1617',
 
     purple500: '#AF39E6',
+    purple700: '#742698',
 
     pink500: '#FF0070',
 

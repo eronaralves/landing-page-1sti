@@ -4,7 +4,7 @@ import * as S from './styles';
 // Interfaces
 interface HeadingServicesProps {
   title: string;
-  description: string;
+  description?: string;
   className?: string;
 }
 
