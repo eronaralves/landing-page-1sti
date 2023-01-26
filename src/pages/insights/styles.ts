@@ -125,6 +125,10 @@ export const ContainerBlogs = styled.div`
 export const Blog = styled(BLogComponent)`
   flex: 1;
 
+  img {
+    width: 293px;
+  }
+
   @media (max-width: 1130px) {
     width: 100%;
     max-width: 280px;
@@ -146,6 +150,7 @@ export const Blog = styled(BLogComponent)`
 
     img {
       width: 100%;
+      height: auto;
     }
   }
 `;
