@@ -33,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Wrapper = styled.div`
   width: 100%;
-  max-width: 1367px;
+  max-width: 1440px;
   margin: 0 auto;
 
   padding-inline: 73px;
