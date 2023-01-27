@@ -9,7 +9,7 @@ interface CardService {
 }
 
 export function Services() {
-  const Services: CardService[] = [
+  const Cards: CardService[] = [
     {
       title: 'Estratégia Digital',
       paragraph: 'A tecnologia como meio para transformações profundas',
@@ -47,7 +47,7 @@ export function Services() {
           emergentes e inovação profunda:
         </p>
       </S.ContentServiceText>
-      {Services.map((card, index) => (
+      {Cards.map((card, index) => (
         <S.Cards key={index} data={card} />
       ))}
     </S.Container>

@@ -15,4 +15,29 @@ export const Heading = styled.div`
     font-size: 1.875rem;
     color: ${({ theme }) => theme.colors.blue100};
   }
+
+  @media (max-width: 1090px) {
+    p {
+      font-size: 1.7rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    display: flex;
+    gap: 8px;
+    h1 {
+      font-size: 3.375rem;
+    }
+
+    p {
+      font-size: 1.375rem;
+      line-height: 26px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    p {
+      font-size: 1.25rem;
+    }
+  }
 `;
