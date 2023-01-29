@@ -48,10 +48,12 @@ export function LayoutService() {
 
   return (
     <S.Container>
-      <S.ContentContactUs>
-        <p>Como podemos ajudar a jornada digital do seu negócio?</p>
-        <Button label="Fale Conosco" href="/contact" />
-      </S.ContentContactUs>
+      <S.ContainerContactUs>
+        <S.ContentContactUs>
+          <p>Como podemos ajudar a jornada digital do seu negócio?</p>
+          <Button label="Fale Conosco" href="/contact" />
+        </S.ContentContactUs>
+      </S.ContainerContactUs>
       <S.ContainerCards>
         {Cards.map((card) => {
           if (card.link.split('/')[1] !== cleanPath[2]) {

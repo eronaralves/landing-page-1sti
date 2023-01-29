@@ -6,10 +6,6 @@ export const ContainerBlog = styled.div`
 
   cursor: pointer;
 
-  img {
-    flex: 1;
-  }
-
   span {
     font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.bold};
     font-size: 0.875rem;

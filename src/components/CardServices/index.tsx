@@ -18,7 +18,7 @@ interface CardServicesProps {
 
 export function CardServices({ data, className }: CardServicesProps) {
   return (
-    <S.ContainerCard href={`services/${data.link}`} className={className}>
+    <S.ContainerCard href={`/services/${data.link}`} className={className}>
       <div>
         <h2>{data.title}</h2>
         <p>{data.paragraph}</p>

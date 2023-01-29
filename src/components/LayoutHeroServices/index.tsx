@@ -1,35 +1,42 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
+
+// Components
+import { HeadingServices } from '../HeadingServices';
+
 // Styles
 import * as S from './styles';
 
-// Images
-import Backbones from '../../../public/backbones.png';
+// Interfaces
+interface ILayoutHeroServicesProps {
+  className?: string;
+  image: StaticImageData;
+  description: string;
+  title: string;
+  subtitle: string;
+}
 
-export function LayoutHeroServices() {
+export function LayoutHeroServices({
+  image,
+  description,
+  className,
+  title,
+  subtitle,
+}: ILayoutHeroServicesProps) {
   return (
-    <S.Container>
-      <S.ContainerHeading>
-        <S.Heading
-          title="Backbones Digitais"
-          description="Acelerando inovações com agilidade aumentada"
-        />
-        <div className="box-image">
-          <Image src={Backbones} alt="" />
+    <S.Container className={className}>
+      <S.ContainerHeading className="heading-container">
+        <div>
+          <HeadingServices
+            className="heading"
+            title={title}
+            description={subtitle}
+          />
+          <div className="box-image">
+            <Image src={image} alt="" />
+          </div>
         </div>
       </S.ContainerHeading>
-      <p className="description">
-        Agilize a inserção e garanta a continuidade de sua empresa na economia
-        digital, com uma fundação tecnológica escalável e flexível que viabiliza
-        inovações e criação de novas capacidades na velocidade necessária para
-        adaptação a mudanças e aproveitamento de oportunidades de mercado.
-        <br />
-        <br />
-        Os Backbones Digitais construídos pela 1STi implementam uma espinha
-        dorsal de tecnologia de missão crítica com interoperabilidade,
-        escalabilidade e integridade costuradas em seu DNA, abrindo caminho para
-        que sua equipe desenvolva plataformas digitais que geram inovações
-        profundas.
-      </p>
+      <p className="description">{description}</p>
     </S.Container>
   );
 }

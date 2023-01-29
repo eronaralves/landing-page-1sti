@@ -11,7 +11,7 @@ export const Heading = styled.div`
   }
 
   p {
-    font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.bold};
+    font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.medium};
     font-size: 1.875rem;
     color: ${({ theme }) => theme.colors.blue100};
   }
@@ -36,8 +36,12 @@ export const Heading = styled.div`
   }
 
   @media (max-width: 360px) {
+    h1 {
+      font-size: 2.8rem;
+    }
+
     p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
   }
 `;
