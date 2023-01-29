@@ -31,7 +31,7 @@ export const Hero = styled(LayoutHeroServices)`
     max-width: 470px;
   }
 
-  .box-image img {
+  .box-image .image-web {
     width: 42%;
     height: auto;
 
@@ -43,12 +43,27 @@ export const Hero = styled(LayoutHeroServices)`
   }
 
   @media (max-width: 975px) {
-    .box-image img {
+    .box-image .image-web {
       width: 90%;
       height: auto;
       margin-top: 20px;
 
       position: initial;
+    }
+  }
+
+  @media (max-width: 425px) {
+    padding-bottom: 50px;
+
+    .image-web {
+      display: none;
+    }
+
+    .image-mob {
+      width: 100%;
+      height: auto;
+
+      margin-block: 50px;
     }
   }
 `;

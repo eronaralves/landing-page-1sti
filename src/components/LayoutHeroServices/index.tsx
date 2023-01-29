@@ -13,6 +13,8 @@ interface ILayoutHeroServicesProps {
   description: string;
   title: string;
   subtitle: string;
+  imageMob?: StaticImageData;
+  imageSecond?: StaticImageData;
 }
 
 export function LayoutHeroServices({
@@ -21,6 +23,8 @@ export function LayoutHeroServices({
   className,
   title,
   subtitle,
+  imageMob,
+  imageSecond,
 }: ILayoutHeroServicesProps) {
   return (
     <S.Container className={className}>
@@ -32,11 +36,13 @@ export function LayoutHeroServices({
             description={subtitle}
           />
           <div className="box-image">
-            <Image src={image} alt="" />
+            <Image className="image-web" src={image} alt="" />
           </div>
+          {imageMob && <Image className="image-mob" src={imageMob} alt="" />}
         </div>
       </S.ContainerHeading>
       <p className="description">{description}</p>
+      {imageSecond && <Image className="image-mob" src={imageSecond} alt="" />}
     </S.Container>
   );
 }

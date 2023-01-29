@@ -9,6 +9,16 @@ export const Container = styled(Wrapper)`
     font-size: 1.125rem;
     font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.regular};
   }
+
+  .image-mob {
+    display: none;
+  }
+
+  @media (max-width: 425px) {
+    .image-mob {
+      display: block;
+    }
+  }
 `;
 
 export const ContainerHeading = styled.div`
