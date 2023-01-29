@@ -125,7 +125,7 @@ export const ContainerBlogs = styled.div`
 export const Blog = styled(BLogComponent)`
   flex: 1;
 
-  img {
+  .box-image-blog img {
     width: 293px;
   }
 

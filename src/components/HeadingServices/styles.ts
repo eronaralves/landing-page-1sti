@@ -11,8 +11,37 @@ export const Heading = styled.div`
   }
 
   p {
-    font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.bold};
+    font-family: ${({ theme }) => theme.fonts.cabinetGrotesk.medium};
     font-size: 1.875rem;
     color: ${({ theme }) => theme.colors.blue100};
+  }
+
+  @media (max-width: 1090px) {
+    p {
+      font-size: 1.7rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    display: flex;
+    gap: 8px;
+    h1 {
+      font-size: 3.375rem;
+    }
+
+    p {
+      font-size: 1.375rem;
+      line-height: 26px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
   }
 `;

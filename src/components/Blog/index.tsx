@@ -18,7 +18,9 @@ interface BlogProps {
 export function Blog({ data, className }: BlogProps) {
   return (
     <S.ContainerBlog className={className}>
-      <Image src={data.image} alt="" />
+      <div className="box-image-blog">
+        <Image src={data.image} alt="" />
+      </div>
       <div>
         <span>{data.type}</span>
         <p>{data.title}</p>
