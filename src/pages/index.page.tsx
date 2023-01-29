@@ -11,11 +11,10 @@ export default function HomePage(props: any) {
 }
 
 export const getServerSideProps = async (context: any) => {
-  const hero = await getHomeHero(context.locale);
-
+  const data = await getHomeHero(context.locale);
   return {
     props: {
-      hero,
+      data,
     },
   };
 };

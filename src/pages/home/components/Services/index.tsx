@@ -2,41 +2,24 @@
 import * as S from './styles';
 
 // Interfaces
-interface CardService {
+export interface CardService {
   title: string;
-  paragraph: string;
-  link: string;
+  subtitle: string;
+  description?: {
+    html: any;
+  };
+  asset?: {
+    url: any;
+  };
+  slug: string;
 }
 
-export function Services() {
-  const Cards: CardService[] = [
-    {
-      title: 'Estratégia Digital',
-      paragraph: 'A tecnologia como meio para transformações profundas',
-      link: '/digital-strategy',
-    },
-    {
-      title: 'Backbones Digitais',
-      paragraph: 'Acelerando inovações com agilidade aumentada',
-      link: '/backbones-digital',
-    },
-    {
-      title: 'Plataformas Digitais',
-      paragraph: 'O caminho para o presente e o futuro dos negócios',
-      link: '/plataform-digital',
-    },
-    {
-      title: 'Inovação Deep Tech',
-      paragraph: 'Tecnologias visionárias para inovação de alto impacto',
-      link: '/deep-tech-innovation',
-    },
-    {
-      title: 'Deep Analytics',
-      paragraph: 'Amplificando análise de dados para multiplicar oportunidades',
-      link: '/deep-analytics',
-    },
-  ];
+interface IServicesProps {
+  card: CardService[];
+  data?: any;
+}
 
+export function Services({ card }: IServicesProps) {
   return (
     <S.Container>
       <S.ContentServiceText>
@@ -47,7 +30,7 @@ export function Services() {
           emergentes e inovação profunda:
         </p>
       </S.ContentServiceText>
-      {Cards.map((card, index) => (
+      {card.map((card, index) => (
         <S.Cards key={index} data={card} />
       ))}
     </S.Container>

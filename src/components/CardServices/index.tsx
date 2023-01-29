@@ -5,23 +5,19 @@ import * as S from './styles';
 import { HiPlus } from 'react-icons/hi';
 
 // Interfaces
-interface CardServic {
-  title: string;
-  paragraph: string;
-  link: string;
-}
+import { CardService } from '../../pages/home/components/Services';
 
 interface CardServicesProps {
-  data: CardServic;
+  data: CardService;
   className?: string;
 }
 
 export function CardServices({ data, className }: CardServicesProps) {
   return (
-    <S.ContainerCard href={`/services/${data.link}`} className={className}>
+    <S.ContainerCard href={`/services/${data.slug}`} className={className}>
       <div>
         <h2>{data.title}</h2>
-        <p>{data.paragraph}</p>
+        <p>{data.subtitle}</p>
       </div>
 
       <span>

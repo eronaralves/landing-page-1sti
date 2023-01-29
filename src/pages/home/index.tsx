@@ -16,19 +16,40 @@ import { CardNotifications } from '../../components/CardNotifications';
 
 // Interface
 interface IHome {
-  hero: {
-    title: string;
-    subtitle: string;
-    description: string;
-    buttonDeepTech: string;
-    buttonClients: string;
-    video: {
-      url: string;
-    };
-  };
+  homeHeroes: [
+    {
+      title: string;
+      subtitle: string;
+      description: string;
+      buttonDeepTech: string;
+      buttonClients: string;
+      video: {
+        url: string;
+      };
+    },
+  ];
+  services: [
+    {
+      title: string;
+      subtitle: string;
+      description: {
+        html: any;
+      };
+      asset: {
+        url: any;
+      };
+      slug: string;
+    },
+  ];
 }
 
-export default function Home({ hero }: IHome) {
+interface IHomeProps {
+  data: IHome;
+}
+
+export default function Home({ data }: IHomeProps) {
+  const { homeHeroes, services } = data;
+  console.log(services);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -39,27 +60,29 @@ export default function Home({ hero }: IHome) {
         <header>
           <S.VideoContainer>
             <S.Video loop={true} muted={true} autoPlay={true}>
-              <source src={hero?.video?.url} type="video/mp4" />
+              <source src={homeHeroes[0]?.video?.url} type="video/mp4" />
             </S.Video>
           </S.VideoContainer>
           <S.ContentHero>
-            <S.Title>{hero?.title}</S.Title>
+            <S.Title>{homeHeroes[0]?.title}</S.Title>
             <hr />
-            <h2>{hero?.subtitle}</h2>
-            <S.ParagraphExplication>{hero?.description}</S.ParagraphExplication>
+            <h2>{homeHeroes[0]?.subtitle}</h2>
+            <S.ParagraphExplication>
+              {homeHeroes[0]?.description}
+            </S.ParagraphExplication>
             <S.BoxButtons>
               <S.ButtonDeepTech>
                 <GrCirclePlay size={22} />
-                <span>{hero?.buttonDeepTech}</span>
+                <span>{homeHeroes[0]?.buttonDeepTech}</span>
               </S.ButtonDeepTech>
               <S.ButtonCLient>
-                <span>{hero?.buttonClients}</span>
+                <span>{homeHeroes[0]?.buttonClients}</span>
               </S.ButtonCLient>
             </S.BoxButtons>
           </S.ContentHero>
         </header>
         <main>
-          <Services />
+          <Services card={services} />
           <JourneyActive />
           <Insights />
           <Pioneering />

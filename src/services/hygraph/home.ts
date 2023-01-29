@@ -16,11 +16,21 @@ export async function getHomeHero(locale: string) {
           url
         }
       }
+      services(locales: [${locale}]) {
+        title
+        subtitle
+        description {
+          html
+        }
+        asset {
+          url
+        }
+        slug
+      }
     }
   `;
 
   const { data } = await apolloClient.query({ query });
-  const homeHero = data.homeHeroes[0];
 
-  return homeHero;
+  return data;
 }
