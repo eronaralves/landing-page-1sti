@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 import Image from 'next/image';
@@ -15,27 +15,34 @@ import ArrowRight from '../../../../assets/images/arrow-right.png';
 import * as S from './styles';
 
 // Interfaces
-interface ModalText {
+import { IHeading } from '../..';
+
+interface ITextSelect {
   paragraph: string;
   author: string;
 }
 
-export function Pioneering() {
-  const [silderTexts] = useState<ModalText[]>([
+interface IPioneeringProps {
+  pioneerings: [
     {
-      paragraph:
-        '“A powerful blueprint for developing a 21st-century purposeful organisation. CEOSs, designers and technologists alike will all take inspiration from this transdiscuplinary approach to Deep Tech.”',
-      author:
-        '— Dave Gray, Founder of XPLANE and author of The Connected Company, Gamestorming and Liminal Thinking',
+      heading: IHeading;
     },
+  ];
+  paragraphsBook: [
     {
-      paragraph:
-        'At a time when the adoption of advanced technologies is accelerating, Deep Tech and the Amplified Organisation and its authors show how a systemic view and the relationships between these new technologies, humanity and the environment are of fundamental importance, since moments of true evolution never have technology as an end in itself.',
-      author:
-        '— Giuliano Michel Fernandes, Head of Marketing and Communications, CBMM',
+      paragraph: string;
+      author: string;
     },
-  ]);
-  const [textCurrent, setTextCurrent] = useState<ModalText>(silderTexts[0]);
+  ];
+}
+
+export function Pioneering({ pioneerings, paragraphsBook }: IPioneeringProps) {
+  const { heading } = pioneerings[0];
+
+  const [silderTexts, setSilderTexts] = useState<ITextSelect[]>(paragraphsBook);
+  const [textCurrent, setTextCurrent] = useState<ITextSelect>(
+    {} as ITextSelect,
+  );
 
   const currentText = silderTexts?.findIndex(
     (text) => text?.paragraph === textCurrent?.paragraph,
@@ -49,14 +56,19 @@ export function Pioneering() {
     setTextCurrent(silderTexts[currentText - 1]);
   }
 
+  useEffect(() => {
+    setSilderTexts(paragraphsBook);
+    setTextCurrent(paragraphsBook[0]);
+  }, [paragraphsBook]);
+
   return (
     <S.Container>
       <HeadingSection
         hrefButton="https://deeptechamplified.com/"
         targetButton="_blank"
-        title="Pioneirismo Deep Tech"
-        paragraph="Deep Tech and the Amplified Organisation provides readers with a powerful and pivotal multi-disciplinary approach to deep tech which has been created to elevate value propositions, scale platforms and amplify the impact of organisations."
-        labelButton="Saiba mais"
+        title={heading.title}
+        paragraph={heading.description}
+        labelButton={heading.textButton}
       />
 
       <S.ContentPioneering>
@@ -75,7 +87,7 @@ export function Pioneering() {
               key={currentText}
             >
               <S.Text>{textCurrent?.paragraph}</S.Text>
-              <span> {textCurrent?.author}</span>
+              <span>{textCurrent?.author}</span>
             </S.BoxTexts>
           </AnimatePresence>
           <S.SliderFooter>

@@ -1,22 +1,70 @@
 // Styles
 import * as S from './styles';
 
-// Images
-import DigitalPlataform from '../../../assets/images/plataform-digital.svg';
-
 // Components
 import { LayoutService } from '../../../components/LayoutService';
 
-export default function PlataformDigital() {
+// Services
+import { getServices } from '../../../services/hygraph/services';
+import { getService } from '../../../services/hygraph/service';
+
+// Interfaces
+interface IPlataformDigitalProps {
+  services: [
+    {
+      title: string;
+      subtitle: string;
+      description: {
+        html: any;
+      };
+      asset: {
+        url: any;
+      };
+      slug: string;
+    },
+  ];
+  service: [
+    {
+      title: string;
+      subtitle: string;
+      description: {
+        text: string;
+      };
+      asset: {
+        url: any;
+      };
+      slug: string;
+    },
+  ];
+}
+
+export default function PlataformDigital({
+  service,
+  services,
+}: IPlataformDigitalProps) {
   return (
     <S.Container>
       <S.Hero
-        title="Plataformas Digitais"
-        subtitle="O caminho para o presente e o futuro dos negócioscom agilidade aumentada"
-        image={DigitalPlataform}
-        description="Concretize sua estratégia digital através de uma plataforma que aumenta a eficácia operacional e habilita o desenvolvimento de novos produtos ou serviços, com agilidade que proporciona vantagens de mercado a seus negócios. Os squads de agilidade aumentada da 1STi estão a postos para construir arquiteturas adequadas à escalabilidade, com discovery conjunto e desenvolvimento de plataformas prontas para a experiência físico-digital, com visão AI nativa e aplicada, habilitando o alcance de novos modelos de negócio, novos mercados ou novas fontes de receita."
+        title={service[0].title}
+        subtitle={service[0].subtitle}
+        description={service[0].description.text}
       />
-      <LayoutService />
+      <LayoutService services={services} />
     </S.Container>
   );
 }
+
+export const getServerSideProps = async (context: any) => {
+  const { services } = await getServices(context.locale);
+  const { services: service } = await getService(
+    context.locale,
+    'plataform-digital',
+  );
+
+  return {
+    props: {
+      services,
+      service,
+    },
+  };
+};

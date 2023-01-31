@@ -73,7 +73,7 @@ export const ContainerSliderTexts = styled.div`
   @media (max-width: 990px) {
     flex: initial;
     width: 100%;
-    height: 350px;
+    height: 360px;
   }
 
   @media (max-width: 610px) {

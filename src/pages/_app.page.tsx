@@ -17,7 +17,11 @@ import { Footer } from '../components/Footer';
 // Context
 import { AppContextProvider } from '../context/app.context';
 
-export default function App({ Component, pageProps }: AppProps) {
+interface AppTypeProps extends AppProps {
+  nagigations: any;
+}
+
+export default function App({ Component, pageProps }: AppTypeProps) {
   // instanciando o client, com initialState para cache
   const client = useApollo(pageProps.initialApolloState);
 

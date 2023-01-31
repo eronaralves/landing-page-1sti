@@ -27,6 +27,55 @@ export async function getHomeHero(locale: string) {
         }
         slug
       }
+
+      journeysActives(locales: [${locale}]) {
+        labelEducation
+        labelHealth
+        labelInsurance
+        labelRetail
+        heading(locales: [${locale}]) {
+          title
+          textButton
+          description
+        }
+      }
+
+      insights {
+        heading(locales: [${locale}]) {
+          textButton
+          title
+          description
+        }
+      }
+
+      cardInsights(locales: [${locale}]) {
+        title
+        type
+      }
+
+      pioneerings(locales: [${locale}]) {
+        heading(locales: [${locale}]) {
+          textButton
+          title
+          description
+        }
+      }
+
+      paragraphsBooks(locales: [${locale}]) {
+        paragraph
+        author
+      }
+
+      cardNotifications {
+        heading(locales: [${locale}]) {
+          title
+          description
+        }
+        inputData(locales: [${locale}]) {
+          placeholder
+          placeholderSucess
+        }
+      }
     }
   `;
 

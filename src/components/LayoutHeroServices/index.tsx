@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
+import { ReactNode } from 'react';
 
 // Components
 import { HeadingServices } from '../HeadingServices';
@@ -9,8 +10,8 @@ import * as S from './styles';
 // Interfaces
 interface ILayoutHeroServicesProps {
   className?: string;
-  image: StaticImageData;
-  description: string;
+  image?: StaticImageData;
+  description: ReactNode;
   title: string;
   subtitle: string;
   imageMob?: StaticImageData;
@@ -35,9 +36,18 @@ export function LayoutHeroServices({
             title={title}
             description={subtitle}
           />
-          <div className="box-image">
-            <Image className="image-web" src={image} alt="" />
-          </div>
+          {image && (
+            <div className="box-image">
+              <Image
+                className="image-web"
+                src={image}
+                alt=""
+                width={100}
+                height={100}
+              />
+            </div>
+          )}
+
           {imageMob && <Image className="image-mob" src={imageMob} alt="" />}
         </div>
       </S.ContainerHeading>

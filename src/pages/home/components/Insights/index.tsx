@@ -1,13 +1,11 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 // Carrosel
 import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 // images
-import Modal1 from '../../../../assets/images/modal-1.png';
 import Modal2 from '../../../../assets/images/modal-2.png';
-import Modal3 from '../../../../assets/images/modal3.png';
 
 // Components
 import { HeadingSection } from '../../../../components/HeadingSection';
@@ -16,45 +14,51 @@ import { HeadingSection } from '../../../../components/HeadingSection';
 import * as S from './styles';
 
 // Interface
-interface ISlider {
-  title: string;
-  type: string;
-  image: StaticImageData;
+interface IInsightsProps {
+  insights: [
+    {
+      heading: {
+        title: string;
+        description: string;
+        textButton: string;
+      };
+    },
+  ];
+
+  cardInsights: [
+    {
+      title: string;
+      type: string;
+      image: string;
+    },
+  ];
 }
 
-export function Insights() {
-  const slides = [
-    {
-      title: 'O que é Agilidade Aumentada?',
-      type: 'Artigo',
-      image: Modal1,
-    },
-    {
-      title: 'Deep Tech e o Futuro da Educação',
-      type: 'Editorial',
+export function Insights({ insights, cardInsights }: IInsightsProps) {
+  const insight = insights[0];
+  const cards = cardInsights;
+
+  const slides = cards.map((card) => {
+    return {
+      ...card,
       image: Modal2,
-    },
-    {
-      title: 'Horizonte Digital',
-      type: 'Artigo',
-      image: Modal3,
-    },
-  ] as ISlider[];
+    };
+  });
 
   return (
     <S.Container>
       <HeadingSection
         hrefButton="/contact"
-        title="Insights"
-        paragraph="A abordagem Deep Tech para temas do presente e futuro."
-        labelButton="Acesse nosso arquivo"
+        title={insight.heading.title}
+        paragraph={insight.heading.description}
+        labelButton={insight.heading.textButton}
       />
 
       <S.SwiperContainer
         slidesPerView={1.5}
         spaceBetween={30}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => {}}
+        onSwiper={() => {}}
         breakpoints={{
           1000: {
             slidesPerView: 3,

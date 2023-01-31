@@ -71,7 +71,6 @@ export default function Insights() {
 
         <S.ContainerBlogs>
           {blogs.map((blog, index) => {
-            console.log(index);
             if (index + 1 <= lenghtBlog) {
               return <S.Blog key={index} data={blog} />;
             } else {

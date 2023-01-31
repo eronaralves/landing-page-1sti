@@ -1,22 +1,70 @@
 // Styles
 import * as S from './styles';
 
-// Images
-import Backbones from '../../../../public/backbones.png';
-
 // Components
 import { LayoutService } from '../../../components/LayoutService';
 
-export default function BackbonesDigital() {
+// Services
+import { getServices } from '../../../services/hygraph/services';
+import { getService } from '../../../services/hygraph/service';
+
+// Interfaces
+interface IBackbonesDigitalProps {
+  services: [
+    {
+      title: string;
+      subtitle: string;
+      description: {
+        html: any;
+      };
+      asset: {
+        url: any;
+      };
+      slug: string;
+    },
+  ];
+  service: [
+    {
+      title: string;
+      subtitle: string;
+      description: {
+        text: string;
+      };
+      asset: {
+        url: any;
+      };
+      slug: string;
+    },
+  ];
+}
+
+export default function BackbonesDigital({
+  services,
+  service,
+}: IBackbonesDigitalProps) {
   return (
     <S.Container>
       <S.Hero
-        title="Backbones Digitais"
-        subtitle="Acelerando inovações com agilidade aumentada"
-        image={Backbones}
-        description="Agilize a inserção e garanta a continuidade de sua empresa na economia digital, com uma fundação tecnológica escalável e flexível que viabiliza inovações e criação de novas capacidades na velocidade necessária para adaptação a mudanças e aproveitamento de oportunidades de mercado. Os Backbones Digitais construídos pela 1STi implementam uma espinha dorsal de tecnologia de missão crítica com interoperabilidade, escalabilidade e integridade costuradas em seu DNA, abrindo caminho para que sua equipe desenvolva plataformas digitais que geram inovações profundas."
+        title={service[0].title}
+        subtitle={service[0].subtitle}
+        description={service[0].description.text}
       />
-      <LayoutService />
+      <LayoutService services={services} />
     </S.Container>
   );
 }
+
+export const getServerSideProps = async (context: any) => {
+  const { services } = await getServices(context.locale);
+  const { services: service } = await getService(
+    context.locale,
+    'backbones-digital',
+  );
+
+  return {
+    props: {
+      services,
+      service,
+    },
+  };
+};

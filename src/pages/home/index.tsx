@@ -15,6 +15,13 @@ import { Pioneering } from './components/Pioneering';
 import { CardNotifications } from '../../components/CardNotifications';
 
 // Interface
+
+export interface IHeading {
+  title: string;
+  description: string;
+  textButton: string;
+}
+
 interface IHome {
   homeHeroes: [
     {
@@ -41,6 +48,59 @@ interface IHome {
       slug: string;
     },
   ];
+
+  journeysActives: [
+    {
+      labelEducation: string;
+      labelHealth: string;
+      labelInsurance: string;
+      labelRetail: string;
+      heading: IHeading;
+    },
+  ];
+
+  insights: [
+    {
+      heading: IHeading;
+    },
+  ];
+
+  cardInsights: [
+    {
+      title: string;
+      type: string;
+      image: string;
+    },
+  ];
+
+  pioneerings: [
+    {
+      bookParagraphs: [
+        {
+          paragraph: string;
+          author: string;
+        },
+      ];
+      heading: IHeading;
+    },
+  ];
+
+  paragraphsBooks: [
+    {
+      paragraph: string;
+      author: string;
+    },
+  ];
+
+  cardNotifications: [
+    {
+      heading: IHeading;
+      inputData: {
+        placeholder: string;
+        placeholderSucess: string;
+      };
+    },
+  ];
 }
 
 interface IHomeProps {
@@ -48,8 +108,19 @@ interface IHomeProps {
 }
 
 export default function Home({ data }: IHomeProps) {
-  const { homeHeroes, services } = data;
-  console.log(services);
+  const {
+    homeHeroes,
+    services,
+    journeysActives,
+    insights,
+    cardInsights,
+    pioneerings,
+    paragraphsBooks,
+    cardNotifications,
+  } = data;
+
+  console.log(cardNotifications);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -60,7 +131,7 @@ export default function Home({ data }: IHomeProps) {
         <header>
           <S.VideoContainer>
             <S.Video loop={true} muted={true} autoPlay={true}>
-              <source src={homeHeroes[0]?.video?.url} type="video/mp4" />
+              <source src={homeHeroes[0]?.video.url} type="video/mp4" />
             </S.Video>
           </S.VideoContainer>
           <S.ContentHero>
@@ -83,10 +154,13 @@ export default function Home({ data }: IHomeProps) {
         </header>
         <main>
           <Services card={services} />
-          <JourneyActive />
-          <Insights />
-          <Pioneering />
-          <CardNotifications />
+          <JourneyActive journeysActives={journeysActives} />
+          <Insights insights={insights} cardInsights={cardInsights} />
+          <Pioneering
+            pioneerings={pioneerings}
+            paragraphsBook={paragraphsBooks}
+          />
+          <CardNotifications cardNotifications={cardNotifications} />
         </main>
       </S.Container>
     </motion.div>

@@ -94,7 +94,7 @@ export const Title = styled.h1`
     }
   }
 
-  @media (max-width: 380px) {
+  @media (max-width: 425px) {
     font-size: 2.3rem;
   }
 `;

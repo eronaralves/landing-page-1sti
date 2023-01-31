@@ -15,17 +15,36 @@ import * as S from './styles';
 // Components
 import { HeadingSection } from '../../../../components/HeadingSection';
 
-export function JourneyActive() {
+// Interfaces
+interface IJourneyActiveProps {
+  journeysActives: [
+    {
+      labelEducation: string;
+      labelHealth: string;
+      labelInsurance: string;
+      labelRetail: string;
+      heading: {
+        title: string;
+        description: string;
+        textButton: string;
+      };
+    },
+  ];
+}
+
+export function JourneyActive({ journeysActives }: IJourneyActiveProps) {
+  const data = journeysActives[0];
+
   return (
     <S.Container>
       <HeadingSection
+        title={data.heading.title}
+        paragraph={data.heading.description}
         hrefButton="/contact"
-        labelButton="Inicie sua jornada"
-        paragraph="Onde estamos e com quais soluções geramos impactos ampliados."
-        title="Jornadas Ativas"
+        labelButton={data.heading.textButton}
       />
       <S.ContainerParthers>
-        <S.TitleParthers>Educaçāo</S.TitleParthers>
+        <S.TitleParthers>{data.labelEducation}</S.TitleParthers>
         <S.Line />
         <S.PartnersIEducation>
           <Image src={Cogna} alt="" />
@@ -37,7 +56,7 @@ export function JourneyActive() {
         <S.ContentOutersParthers>
           <S.BoxOutersParthers>
             <div>
-              <S.TitleParthers>Saúde</S.TitleParthers>
+              <S.TitleParthers>{data.labelHealth}</S.TitleParthers>
               <S.Line />
             </div>
             <Image src={SirioLibanes} alt="" width={224} />
@@ -45,14 +64,14 @@ export function JourneyActive() {
 
           <S.BoxOutersParthers>
             <div>
-              <S.TitleParthers>Seguros</S.TitleParthers>
+              <S.TitleParthers>{data.labelInsurance}</S.TitleParthers>
               <S.Line />
             </div>
             <Image src={SulAmerica} alt="" width={162} />
           </S.BoxOutersParthers>
           <S.BoxOutersParthers>
             <div>
-              <S.TitleParthers>Varejos</S.TitleParthers>
+              <S.TitleParthers>{data.labelRetail}</S.TitleParthers>
               <S.Line />
             </div>
 

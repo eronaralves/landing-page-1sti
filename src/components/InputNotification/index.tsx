@@ -27,9 +27,16 @@ type FormInputs = yup.InferType<typeof formSchema>;
 // Interfaces
 interface InputNotificationProps {
   className?: string;
+  inputData: {
+    placeholder: string;
+    placeholderSucess: string;
+  };
 }
 
-export function InputNotification({ className }: InputNotificationProps) {
+export function InputNotification({
+  className,
+  inputData,
+}: InputNotificationProps) {
   const [loading, setLoading] = useState(false);
   const theme = useTheme();
 
@@ -42,10 +49,10 @@ export function InputNotification({ className }: InputNotificationProps) {
     resolver: yupResolver(formSchema),
   });
 
-  function handleEmailSubmit(data: FormInputs) {
+  function handleEmailSubmit() {
     setLoading(true);
     setTimeout(() => {
-      setValue('email', 'Obrigado');
+      setValue('email', inputData.placeholderSucess);
       setLoading(false);
     }, 3000);
   }
@@ -57,7 +64,7 @@ export function InputNotification({ className }: InputNotificationProps) {
           <input
             type="text"
             autoComplete="off"
-            placeholder="Digite seu email"
+            placeholder={inputData.placeholder}
             {...register('email')}
             disabled={isSubmitSuccessful}
           />

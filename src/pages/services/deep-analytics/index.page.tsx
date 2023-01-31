@@ -1,22 +1,70 @@
 // Styles
 import * as S from './styles';
 
-// Images
-import DeepAnalytic from '../../../assets/images/deep-analytics.svg';
-
 // Components
 import { LayoutService } from '../../../components/LayoutService';
 
-export default function DeepAnalytics() {
+// Services
+import { getServices } from '../../../services/hygraph/services';
+import { getService } from '../../../services/hygraph/service';
+
+// Interfaces
+interface IDeepAnalyticsProps {
+  services: [
+    {
+      title: string;
+      subtitle: string;
+      description: {
+        html: any;
+      };
+      asset: {
+        url: any;
+      };
+      slug: string;
+    },
+  ];
+  service: [
+    {
+      title: string;
+      subtitle: string;
+      description: {
+        text: string;
+      };
+      asset: {
+        url: any;
+      };
+      slug: string;
+    },
+  ];
+}
+
+export default function DeepAnalytics({
+  service,
+  services,
+}: IDeepAnalyticsProps) {
   return (
     <S.Container>
       <S.Hero
-        title="Deep Analytics"
-        subtitle="Amplificando análise de dados para multiplicar oportunidades"
-        image={DeepAnalytic}
-        description="Aumente o poder dos dados criando um núcleo de inteligência capaz de aprofundar as análises usando hiper relacionamento e processamento de nova geração. O Deep Analytics é capaz de extrair informação a partir da fala, imagens e vídeos, documentos digitalizados, robôs digitais de extração e bancos de dados em qualquer fonte, públicos e privados. Conecte os seus processos a esse centro de inteligência e habilite a inteligência artificial para criar experiências personalizadas, otimizar a alocação e distribuição de recursos, construir plataformas de dados com visão 360 graus e descobrir continuamente oportunidades de eficiência operacional e financeira."
+        title={service[0].title}
+        subtitle={service[0].subtitle}
+        description={service[0].description.text}
       />
-      <LayoutService />
+      <LayoutService services={services} />
     </S.Container>
   );
 }
+
+export const getServerSideProps = async (context: any) => {
+  const { services } = await getServices(context.locale);
+  const { services: service } = await getService(
+    context.locale,
+    'deep-analytics',
+  );
+
+  return {
+    props: {
+      services,
+      service,
+    },
+  };
+};
