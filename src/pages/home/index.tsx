@@ -35,6 +35,14 @@ interface IHome {
       };
     },
   ];
+
+  serviceSections: [
+    {
+      heading: IHeading;
+      descriptionHome: string;
+    },
+  ];
+
   services: [
     {
       title: string;
@@ -110,6 +118,7 @@ interface IHomeProps {
 export default function Home({ data }: IHomeProps) {
   const {
     homeHeroes,
+    serviceSections,
     services,
     journeysActives,
     insights,
@@ -153,7 +162,7 @@ export default function Home({ data }: IHomeProps) {
           </S.ContentHero>
         </header>
         <main>
-          <Services card={services} />
+          <Services card={services} serviceSections={serviceSections} />
           <JourneyActive journeysActives={journeysActives} />
           <Insights insights={insights} cardInsights={cardInsights} />
           <Pioneering

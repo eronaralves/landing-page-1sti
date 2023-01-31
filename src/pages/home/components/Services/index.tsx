@@ -2,6 +2,8 @@
 import * as S from './styles';
 
 // Interfaces
+import { IHeading } from '../..';
+
 export interface CardService {
   title: string;
   subtitle: string;
@@ -16,19 +18,24 @@ export interface CardService {
 
 interface IServicesProps {
   card: CardService[];
-  data?: any;
+  serviceSections: [
+    {
+      heading: IHeading;
+      descriptionHome: string;
+    },
+  ];
 }
 
-export function Services({ card }: IServicesProps) {
+export function Services({ card, serviceSections }: IServicesProps) {
+  const { descriptionHome, heading } = serviceSections[0];
+
+  console.log(serviceSections[0]);
+
   return (
     <S.Container>
       <S.ContentServiceText>
-        <h2>Servicos</h2>
-        <p>
-          O que podemos fazer para elevar propostas de valor, escalar soluções
-          com agilidade aumentada e amplificar resultados com tecnologias
-          emergentes e inovação profunda:
-        </p>
+        <h2>{heading.title}</h2>
+        <p>{descriptionHome}</p>
       </S.ContentServiceText>
       {card.map((card, index) => (
         <S.Cards key={index} data={card} />

@@ -16,6 +16,16 @@ export async function getHomeHero(locale: string) {
           url
         }
       }
+
+      serviceSections(locales: [${locale}]) {
+        heading(locales: [${locale}]) {
+          title
+          textButton
+          description
+        }
+        descriptionHome
+      }
+
       services(locales: [${locale}]) {
         title
         subtitle

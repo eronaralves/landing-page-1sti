@@ -4,8 +4,18 @@ import * as S from './styles';
 // Icons
 import { HiPlus } from 'react-icons/hi';
 
-// Interfaces
-import { CardService } from '../../pages/home/components/Services';
+interface CardService {
+  description: {
+    markdown: string;
+  };
+  asset: {
+    url: string;
+  };
+
+  slug: string;
+  subtitle: string;
+  title: string;
+}
 
 interface CardServicesProps {
   data: CardService;

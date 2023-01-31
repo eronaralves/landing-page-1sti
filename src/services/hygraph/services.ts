@@ -6,6 +6,13 @@ const apolloClient = initializeApollo();
 export async function getServices(locale: string) {
   const query = gql`
     query {
+      serviceSections(locales: [${locale}]) {
+        heading(locales: [${locale}]) {
+          title
+          description
+        }
+        descrptionService
+      }
       services(locales: [${locale}]) {
         title
         subtitle
